@@ -1,0 +1,20 @@
+#!/bin/sh
+
+message_file="$1"
+subject="$(sed -n '1p' "$message_file")"
+
+case "$subject" in
+  Merge\ *|Revert\ *|fixup\!*|squash\!*)
+    exit 0
+    ;;
+esac
+
+pattern='^(feat|fix|docs|style|refactor|test|chore)\([a-z0-9][a-z0-9-]*\): .{1,72}$'
+
+if ! printf '%s\n' "$subject" | grep -Eq "$pattern"; then
+  printf '%s\n' "Invalid commit message:" >&2
+  printf '  %s\n\n' "$subject" >&2
+  printf '%s\n' "Expected: type(scope): short description" >&2
+  printf '%s\n' "Example:  feat(assignment-01): add registration form markup" >&2
+  exit 1
+fi
