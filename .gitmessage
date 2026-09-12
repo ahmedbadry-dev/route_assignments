@@ -1,0 +1,5 @@
+# type(scope): short imperative description
+#
+# Allowed types: feat, fix, docs, style, refactor, test, chore
+# Example: feat(assignment-01): add registration form markup
+# Keep the first line at 72 characters or fewer.
