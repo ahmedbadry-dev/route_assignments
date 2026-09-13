@@ -13,6 +13,13 @@ Assignment_03/
 ...
 ```
 
+## Live Demos
+
+| Assignment    | Source                  | Live Demo                                           |
+| ------------- | ----------------------- | --------------------------------------------------- |
+| Assignment 01 | [Code](./Assignment_01) | [Live Demo](https://route-assignment-01.vercel.app) |
+| Assignment 02 | [Code](./Assignment_02) | [Live Demo](https://route-assignment-02.vercel.app) |
+
 ## Branch flow
 
 ```text
