@@ -5,6 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My portfolio AB</title>
+    <style>
+        body {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        table.expTable {
+            border-collapse: collapse;
+        }
+
+        table.expTable td,
+        th {
+            border: 2px solid black;
+            padding: 8px;
+        }
+    </style>
 </head>
 
 <body>
@@ -15,9 +34,9 @@
         <p>Professional Web Developer</p>
     </header>
 
+    <!-- portfolio about -->
     <section>
-        <h2 style="color: #1C6EA4;">About Me</h2>
-        <br>
+        <h2 style="color: #1C6EA4; margin-bottom: 30px;">About Me</h2>
         <table width="100%">
             <tbody>
                 <tr>
@@ -69,6 +88,135 @@
         </table>
     </section>
 
+    <!-- 
+    
+    Professional Experience Overview
+
+Company
+
+Logo
+
+Role
+
+Dates
+
+Senior Full Stack Developer
+
+Key Achievements
+
+. Lead development of web applications
+· Mentor junior developers
+. Architect scalable solutions
+
+Jan 2023 - Present
+
+TechCorp Solutions
+
+Full Stack Developer
+
+. Developed responsive web applications
+. Collaborated with design teams
+. Optimized application performance
+
+2021-2023
+
+Digital Agency Pro
+
+Frontend Developer
+
+. Built user interfaces from mockups
+. Implemented responsive designs
+. Conducted code reviews
+
+2019 - 2020
+
+Web Design Studio
+
+Junior Web Developer
+
+. Maintained existing websites
+. Fixed bugs and implemented features
+. Learned best practices
+
+2019 - 2020
+
+Total Experience: 5+ years in web development
+    
+    -->
+
+    <!-- portfolio experience timeline -->
+    <section>
+        <h2 style="color: #1C6EA4; margin-bottom: 30px;">Experience Timeline</h2>
+        <table class="expTable" width="100%">
+            <caption>Professional Experience Overview</caption>
+            <thead style=" background-color: #1C6EA4; color: white;">
+                <tr>
+                    <th>Company</th>
+                    <th>Logo</th>
+                    <th>Role</th>
+                    <th>Key Achievement</th>
+                    <th>Dates</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="2">TechCorp Solutions</td>
+                    <td rowspan="2"><img src="./imgs/logo-1.jpg" alt="logo" width="60px"></td>
+                    <td>Senior Full Stack Developer</td>
+                    <td>
+                        <ul>
+                            <li>Lead development of web applications</li>
+                            <li>Mentor junior developers</li>
+                            <li>Architect scalable solutions</li>
+                        </ul>
+                    </td>
+                    <td>Jan 2023 - Present</td>
+                </tr>
+                <tr>
+                    <td>Senior Full Stack Developer</td>
+                    <td>
+                        <ul>
+                            <li>Lead development of web applications</li>
+                            <li>Mentor junior developers</li>
+                            <li>Architect scalable solutions</li>
+                        </ul>
+                    </td>
+                    <td>Jan 2023 - Present</td>
+                </tr>
+                <tr>
+                    <td>TechCorp Solutions</td>
+                    <td><img src="./imgs/logo-2.png" alt="logo" width="60px"></td>
+                    <td>Senior Full Stack Developer</td>
+                    <td>
+                        <ul>
+                            <li>Lead development of web applications</li>
+                            <li>Mentor junior developers</li>
+                            <li>Architect scalable solutions</li>
+                        </ul>
+                    </td>
+                    <td>Jan 2023 - Present</td>
+                </tr>
+                <tr>
+                    <td>TechCorp Solutions</td>
+                    <td><img src="./imgs/logo-3.png" alt="logo" width="60px"></td>
+                    <td>Senior Full Stack Developer</td>
+                    <td>
+                        <ul>
+                            <li>Lead development of web applications</li>
+                            <li>Mentor junior developers</li>
+                            <li>Architect scalable solutions</li>
+                        </ul>
+                    </td>
+                    <td>Jan 2023 - Present</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="5">Total Experience: 5+ years in web development</td>
+                </tr>
+            </tfoot>
+        </table>
+    </section>
 </body>
 
 </html>
