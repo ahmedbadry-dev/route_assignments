@@ -23,6 +23,10 @@
             border: 2px solid black;
             padding: 8px;
         }
+
+        fieldset {
+            margin-top: 20px;
+        }
     </style>
 </head>
 
@@ -88,62 +92,6 @@
         </table>
     </section>
 
-    <!-- 
-    
-    Professional Experience Overview
-
-Company
-
-Logo
-
-Role
-
-Dates
-
-Senior Full Stack Developer
-
-Key Achievements
-
-. Lead development of web applications
-· Mentor junior developers
-. Architect scalable solutions
-
-Jan 2023 - Present
-
-TechCorp Solutions
-
-Full Stack Developer
-
-. Developed responsive web applications
-. Collaborated with design teams
-. Optimized application performance
-
-2021-2023
-
-Digital Agency Pro
-
-Frontend Developer
-
-. Built user interfaces from mockups
-. Implemented responsive designs
-. Conducted code reviews
-
-2019 - 2020
-
-Web Design Studio
-
-Junior Web Developer
-
-. Maintained existing websites
-. Fixed bugs and implemented features
-. Learned best practices
-
-2019 - 2020
-
-Total Experience: 5+ years in web development
-    
-    -->
-
     <!-- portfolio experience timeline -->
     <section>
         <h2 style="color: #1C6EA4; margin-bottom: 30px;">Experience Timeline</h2>
@@ -161,7 +109,7 @@ Total Experience: 5+ years in web development
             <tbody>
                 <tr>
                     <td rowspan="2">TechCorp Solutions</td>
-                    <td rowspan="2"><img src="./imgs/logo-1.jpg" alt="logo" width="60px"></td>
+                    <td rowspan="2"><img src="./imgs/logo-1.jpg" alt="logo" width="60"></td>
                     <td>Senior Full Stack Developer</td>
                     <td>
                         <ul>
@@ -185,7 +133,7 @@ Total Experience: 5+ years in web development
                 </tr>
                 <tr>
                     <td>TechCorp Solutions</td>
-                    <td><img src="./imgs/logo-2.png" alt="logo" width="60px"></td>
+                    <td><img src="./imgs/logo-2.png" alt="logo" width="60"></td>
                     <td>Senior Full Stack Developer</td>
                     <td>
                         <ul>
@@ -198,7 +146,7 @@ Total Experience: 5+ years in web development
                 </tr>
                 <tr>
                     <td>TechCorp Solutions</td>
-                    <td><img src="./imgs/logo-3.png" alt="logo" width="60px"></td>
+                    <td><img src="./imgs/logo-3.png" alt="logo" width="60"></td>
                     <td>Senior Full Stack Developer</td>
                     <td>
                         <ul>
@@ -216,6 +164,119 @@ Total Experience: 5+ years in web development
                 </tr>
             </tfoot>
         </table>
+    </section>
+
+    <!-- portfolio contact me -->
+    <section>
+        <h2 style="color: #1C6EA4; margin-bottom: 30px;">Contact Me</h2>
+        <p>Feel free to reach out to me using the form below. I'd love to hear from you!</p>
+
+        <form method="post">
+            <!-- personal information -->
+            <fieldset>
+                <legend>Personal information</legend>
+                <table width="100%">
+                    <tbody>
+                        <tr>
+                            <td width="15%"><label for="fName">First Name: *</label></td>
+                            <td><input type="text" name="fName" id="fName" required></td>
+                            <td width="15%"><label for="lName">Last Name: *</label></td>
+                            <td><input type="text" name="lName" id="lName" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="email">Email Address: *</label></td>
+                            <td><input type="email" name="email" id="email" required></td>
+                            <td><label for="phoneNumber">Phone Number: </label></td>
+                            <td><input type="tel" name="phoneNumber" id="phoneNumber"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="preferredMeetingDate">Preferred Meeting Date:</label></td>
+                            <td><input type="date" name="preferredMeetingDate" id="preferredMeetingDate"></td>
+                            <td><label for="bestTimeToContact">Best Time to Contact: </label></td>
+                            <td><input type="time" name="bestTimeToContact" id="bestTimeToContact"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </fieldset>
+
+            <!-- Project Details -->
+            <fieldset>
+                <legend>Project Details</legend>
+                <table width="100%">
+                    <tbody>
+                        <tr>
+                            <td width="30%">
+                                <label for="projectType">Project Type: *</label>
+                                <input type="text" name="projectType" id="projectType" required>
+                            </td>
+                            <td width="10%">
+                                <label for="projectDescription">
+                                    Project Description: *
+                                </label>
+                            </td>
+                            <td>
+                                <textarea name="projectDescription" id="projectDescription" required></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Budget Range:</p>
+                                <input type="radio" name="budgetRange" id="BR-1" value="Under $$5000">
+                                <label for="BR-1">Under $$5000</label>
+                                <br>
+                                <input type="radio" name="budgetRange" id="BR-2" value="$5000 - $10000">
+                                <label for="BR-2">$5000 - $10000</label>
+                                <br>
+                                <input type="radio" name="budgetRange" id="BR-3" value="$10000 - $25000">
+                                <label for="BR-3">$10000 - $25000</label>
+                                <br>
+                                <input type="radio" name="budgetRange" id="BR-4" value="Over $25000">
+                                <label for="BR-4">Over $25000</label>
+                            </td>
+                            <td colspan="2">
+                                <p>Services Required (Check all that apply)</p>
+                                <input type="checkbox" name="servicesRequired" id="SR-1" value="UI/UX Design">
+                                <label for="SR-1">UI/UX Design</label>
+                                <br>
+                                <input type="checkbox" name="servicesRequired" id="SR-2" value="Frontend Development">
+                                <label for="SR-2">Frontend Development</label>
+                                <br>
+                                <input type="checkbox" name="servicesRequired" id="SR-3" value="Backend Development">
+                                <label for="SR-3">Backend Development</label>
+                                <br>
+                                <input type="checkbox" name="servicesRequired" id="SR-4" value="Hosting & Deployment">
+                                <label for="SR-4">Hosting & Deployment</label>
+                                <br>
+                                <input type="checkbox" name="servicesRequired" id="SR-5" value="Maintenance & Support">
+                                <label for="SR-5">Maintenance & Support</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <label for="howDidYouHeatAboutMe">How did you heat about me ?</label>
+                                <select name="howDidYouHeatAboutMe" id="howDidYouHeatAboutMe">
+                                    <option value="" disabled selected>-- select source </option>
+                                    <option value="1">Linked In</option>
+                                    <option value="2">Facebook</option>
+                                    <option value="3">X</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </fieldset>
+
+            <table style="padding-top: 20px;">
+                <tr>
+                    <td>
+                        <button type="submit" style="background: #2196F3; color: white;">Send Massage</button>
+                    </td>
+                    <td>
+                        <button type="reset" style="background-color: #F44336; color: white;">Clear Form</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
     </section>
 </body>
 
