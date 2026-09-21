@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+
+    --color-white: #fff;
+    --color-black: #000;
+
+
+    --text-primary: #101828;
+    --text-secondary: #4a5565;
+
+    --border-default: #d1d5dc;
+
+    --blue-subtle: #DBEAFE;
+    --blue-main: #155DFC;
+
+    --green-subtle: #D0FAE5;
+    --green-main: #009966;
+
+    --purple-subtle: #F3E8FF;
+    --purple-main: #9810FA;
+}
+
+body {
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.container {
+    width: 78%;
+    margin-inline: auto;
+}
+
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* start hero section */
+#hero-section {
+    padding-block: 80px;
+    padding-inline: 24px;
+}
+
+#hero-section .content {
+    overflow: hidden;
+}
+
+#hero-section .content .hero-info {
+    float: left;
+    width: calc(100% / 2);
+}
+
+#hero-section .content .hero-info h1 {
+    color: var(--text-primary);
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 24px;
+}
+
+#hero-section .content .hero-info p {
+    color: var(--text-secondary);
+    font-size: 20px;
+    line-height: 1.625;
+    margin-bottom: 32px;
+}
+
+#hero-section .content .hero-info .btns a {
+    padding: 16px 32px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.6;
+    cursor: pointer;
+    border: 2px solid var(--color-black);
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+#hero-section .content .hero-info .btns a:first-child {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    margin-inline-end: 10px;
+}
+
+#hero-section .content .hero-info .btns a:last-child {
+    border-color: var(--border-default);
+}
+
+#hero-section .content .hero-img {
+    float: right;
+    width: calc(100% / 2);
+    padding-block: 25px;
+    padding-inline: 95px;
+}
+
+#hero-section .content .hero-img img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    -ms-border-radius: 16px;
+    -o-border-radius: 16px;
+}
+
+
+/* end hero section */
