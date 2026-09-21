@@ -10,23 +10,45 @@
     --color-black: #000;
 
 
+    /* Text */
     --text-primary: #101828;
     --text-secondary: #4a5565;
     --text-tertiary: #364153;
 
+
+    /* Borders */
     --border-default: #d1d5dc;
+    --border-light: #e2e8f0;
+
     --border-light-purple: #f3e8ff;
+    --border-purple-soft: #e9d4ff;
+
     --border-light-blue: #dbeafe;
+    --border-blue-soft: #bedbff;
+
     --border-light-green: #d0fae5;
+    --border-green-soft: #a4f4cf;
 
-    --blue-subtle: #DBEAFE;
+
+    /* Blue */
     --blue-main: #155DFC;
+    --blue-subtle: #DBEAFE;
+    --blue-background: #eff6ff;
+    --surface-slate-subtle: #F1F5F9;
 
-    --green-subtle: #D0FAE5;
+
+
+    /* Green */
     --green-main: #009966;
+    --green-subtle: #D0FAE5;
+    --green-background: #ecfdf5;
 
-    --purple-subtle: #F3E8FF;
+
+    /* Purple */
     --purple-main: #9810FA;
+    --purple-subtle: #F3E8FF;
+    --purple-background: #faf5ff;
+
 }
 
 body {
@@ -199,18 +221,18 @@ h4 {
 
 #why-fit-core-section .content .feature-cards .card:nth-of-type(1) {
     background-color: var(--blue-subtle);
-    border-color: var(--border-light-blue);
+    border-color: var(--border-blue-soft);
 }
 
 #why-fit-core-section .content .feature-cards .card:nth-of-type(2) {
     background-color: var(--green-subtle);
-    border-color: var(--border-light-green);
+    border-color: var(--border-green-soft);
 
 }
 
 #why-fit-core-section .content .feature-cards .card:nth-of-type(3) {
     background-color: var(--purple-subtle);
-    border-color: var(--border-light-purple);
+    border-color: var(--border-purple-soft);
 }
 
 #why-fit-core-section .content .feature-cards .card.middle {
@@ -316,3 +338,139 @@ h4 {
 }
 
 /* End Why Choose FitCore Gym  */
+
+/* Start testimonials section */
+#testimonials-section {
+    padding-block: 80px;
+    padding-inline: 24px;
+}
+
+#testimonials-section .content .title {
+    text-align: center;
+    margin-bottom: 64px;
+}
+
+#testimonials-section .content .title p {
+    max-width: 768px;
+    font-size: 20px;
+    line-height: 1.4;
+    color: var(--text-secondary);
+    margin-inline: auto;
+}
+
+
+#testimonials-section .content .testimonials-cards {
+    overflow: hidden;
+    margin-bottom: 64px;
+}
+
+#testimonials-section .content .testimonials-cards .card {
+    float: left;
+    padding: 32px;
+    width: calc((100% - 64px) / 3);
+    /* min-height: 265.85px; */
+    border: 1px solid;
+    border-radius: 16px;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    -ms-border-radius: 16px;
+    -o-border-radius: 16px;
+}
+
+#testimonials-section .content .testimonials-cards .card.middle {
+    margin-inline: 32px;
+}
+
+#testimonials-section .content .testimonials-cards .card:nth-of-type(1) {
+    background-color: var(--blue-background);
+    border-color: var(--border-blue-soft);
+}
+
+#testimonials-section .content .testimonials-cards .card:nth-of-type(2) {
+    background-color: var(--green-background);
+    border-color: var(--border-green-soft);
+
+}
+
+#testimonials-section .content .testimonials-cards .card:nth-of-type(3) {
+    background-color: var(--purple-background);
+    border-color: var(--border-purple-soft);
+}
+
+#testimonials-section .content .testimonials-cards .card .card-header {
+    overflow: hidden;
+}
+
+#testimonials-section .content .testimonials-cards .card .card-header .member-img {
+    float: left;
+    width: 64px;
+    height: 64px;
+    margin-right: 16px;
+    margin-bottom: 24px;
+}
+
+#testimonials-section .content .testimonials-cards .card .card-header .member-img img {
+    object-fit: cover;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+#testimonials-section .content .testimonials-cards .card .card-header .member-info {
+    float: left;
+}
+
+#testimonials-section .content .testimonials-cards .card .card-header .member-info h4 {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.5556;
+    margin-bottom: 0;
+}
+
+#testimonials-section .content .testimonials-cards .card .card-header .member-info p {
+    color: var(--text-tertiary);
+}
+
+#testimonials-section .content .testimonials-cards .card .card-body p {
+    color: var(--text-tertiary);
+    line-height: 1.625;
+}
+
+#testimonials-section .content .statistics-numbers {
+    overflow: hidden;
+    padding: 48px;
+    background-color: var(--surface-slate-subtle);
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    -ms-border-radius: 16px;
+    -o-border-radius: 16px;
+}
+
+#testimonials-section .content .statistics-numbers .card {
+    float: left;
+    width: calc((100% - (32px * 3)) / 4);
+    margin-right: 32px;
+    text-align: center;
+}
+
+#testimonials-section .content .statistics-numbers .card:last-child {
+    margin-right: 0;
+}
+
+#testimonials-section .content .statistics-numbers .card div {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.1111;
+    margin-bottom: 8px;
+    color: var(--color-black);
+}
+
+#testimonials-section .content .statistics-numbers .card p {
+    color: var(--text-secondary);
+}
+
+/* End testimonials section */
