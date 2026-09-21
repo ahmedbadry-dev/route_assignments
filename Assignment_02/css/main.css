@@ -8,7 +8,7 @@
 
     --color-white: #fff;
     --color-black: #000;
-
+    --background-muted: #F9FAFB;
 
     /* Text */
     --text-primary: #101828;
@@ -474,3 +474,122 @@ h4 {
 }
 
 /* End testimonials section */
+
+/* Start call to action section */
+#call-to-action-section {
+    padding-block: 80px;
+    padding-inline: 24px;
+}
+
+#call-to-action-section .content {
+    max-width: 896px;
+    margin-inline: auto;
+}
+
+#call-to-action-section .content .title {
+    text-align: center;
+    margin-bottom: 64px;
+}
+
+#call-to-action-section .content .title p {
+    max-width: 768px;
+    font-size: 20px;
+    line-height: 1.4;
+    color: var(--text-secondary);
+    margin-inline: auto;
+}
+
+#call-to-action-section .content .form-content {
+    background-color: var(--background-muted);
+    padding: 48px;
+    border-radius: 16px;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    -ms-border-radius: 16px;
+    -o-border-radius: 16px;
+}
+
+form .input-field {
+    margin-bottom: 24px;
+}
+
+form .input-field label {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.55556;
+    color: var(--text-tertiary);
+}
+
+form .input-field input,
+form .input-field select,
+form .input-field textarea {
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    line-height: 1.5556;
+    padding: 16px 24px;
+    background-color: inherit;
+    border: 1px solid var(--border-default);
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+form .input-field input::placeholder {
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+form .input-field input:focus {
+    border-color: var(--color-black);
+    outline: none;
+}
+
+form .fullName {
+    overflow: hidden;
+}
+
+form .fullName .input-field {
+    float: left;
+    width: calc((100% - 24px) /2);
+}
+
+form .fullName .input-field:first-child {
+    margin-right: 24px;
+}
+
+
+form .input-field textarea {
+    height: 96px;
+    resize: none;
+}
+
+form button[type=submit] {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: 24px;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: 16px 32px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+form div:last-child p {
+    font-size: 14px;
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+/* End call to action section */
