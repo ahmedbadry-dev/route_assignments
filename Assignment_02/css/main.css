@@ -12,8 +12,12 @@
 
     --text-primary: #101828;
     --text-secondary: #4a5565;
+    --text-tertiary: #364153;
 
     --border-default: #d1d5dc;
+    --border-light-purple: #f3e8ff;
+    --border-light-blue: #dbeafe;
+    --border-light-green: #d0fae5;
 
     --blue-subtle: #DBEAFE;
     --blue-main: #155DFC;
@@ -50,6 +54,43 @@ img {
     max-width: 100%;
 }
 
+h1,
+h2,
+h3,
+h4 {
+    color: var(--text-primary);
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 1.25;
+    margin-bottom: 24px;
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.1111;
+    margin-bottom: 24px;
+
+}
+
+h3 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 16px;
+
+}
+
+h4 {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 8px;
+}
+
 /* start hero section */
 #hero-section {
     padding-block: 80px;
@@ -65,13 +106,6 @@ img {
     width: calc(100% / 2);
 }
 
-#hero-section .content .hero-info h1 {
-    color: var(--text-primary);
-    font-size: 60px;
-    font-weight: 700;
-    line-height: 1.25;
-    margin-bottom: 24px;
-}
 
 #hero-section .content .hero-info p {
     color: var(--text-secondary);
@@ -124,3 +158,161 @@ img {
 
 
 /* end hero section */
+
+/* Start Why Choose FitCore Gym  */
+#why-fit-core-section {
+    padding-block: 80px;
+    padding-inline: 24px;
+}
+
+#why-fit-core-section .content .title {
+    text-align: center;
+    margin-bottom: 64px;
+}
+
+#why-fit-core-section .content .title p {
+    max-width: 768px;
+    font-size: 20px;
+    line-height: 1.4;
+    color: var(--text-secondary);
+    margin-inline: auto;
+}
+
+#why-fit-core-section .content .feature-cards {
+    overflow: hidden;
+    margin-bottom: 64px;
+}
+
+#why-fit-core-section .content .feature-cards .card {
+    float: left;
+    padding: 32px;
+    width: calc((100% - 64px) / 3);
+    min-height: 265.85px;
+    text-align: center;
+    border: 1px solid;
+    border-radius: 16px;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    -ms-border-radius: 16px;
+    -o-border-radius: 16px;
+}
+
+#why-fit-core-section .content .feature-cards .card:nth-of-type(1) {
+    background-color: var(--blue-subtle);
+    border-color: var(--border-light-blue);
+}
+
+#why-fit-core-section .content .feature-cards .card:nth-of-type(2) {
+    background-color: var(--green-subtle);
+    border-color: var(--border-light-green);
+
+}
+
+#why-fit-core-section .content .feature-cards .card:nth-of-type(3) {
+    background-color: var(--purple-subtle);
+    border-color: var(--border-light-purple);
+}
+
+#why-fit-core-section .content .feature-cards .card.middle {
+    margin-inline: 32px;
+}
+
+#why-fit-core-section .content .feature-cards .card .icon {
+    margin-inline: auto;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+}
+
+#why-fit-core-section .content .feature-cards .card .icon div {
+    margin-inline: auto;
+    margin-top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+
+#why-fit-core-section .content .feature-cards .card:nth-of-type(1) .icon {
+    background-color: var(--blue-main);
+}
+
+#why-fit-core-section .content .feature-cards .card:nth-of-type(2) .icon {
+    background-color: var(--green-main);
+}
+
+#why-fit-core-section .content .feature-cards .card:nth-of-type(3) .icon {
+    background-color: var(--purple-main);
+}
+
+#why-fit-core-section .content .feature-cards .card .icon div {
+    width: 32px;
+    height: 32px;
+    background-color: var(--color-white);
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+#why-fit-core-section .content .feature-cards .card.middle .icon div {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+#why-fit-core-section .content .feature-cards .card p {
+    font-size: 14px;
+    line-height: 1.625;
+    color: var(--text-tertiary);
+}
+
+#why-fit-core-section .content .more-than-gym {
+    overflow: hidden;
+}
+
+#why-fit-core-section .content .more-than-gym .lift-side {
+    float: left;
+    width: calc((100% - 48px) / 2);
+}
+
+#why-fit-core-section .content .more-than-gym .lift-side img {
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+}
+
+#why-fit-core-section .content .more-than-gym .right-side {
+    float: right;
+    width: calc((100% - 48px) / 2);
+}
+
+#why-fit-core-section .content .more-than-gym .right-side h3 {
+    font-size: 30px;
+    line-height: 1.2;
+    margin-bottom: 24px;
+}
+
+#why-fit-core-section .content .more-than-gym .right-side ul li {
+    padding-left: 24px;
+    margin-bottom: 16px;
+    border-left: 4px solid var(--color-black);
+}
+
+#why-fit-core-section .content .more-than-gym .right-side ul li p {
+    color: var(--text-secondary);
+}
+
+/* End Why Choose FitCore Gym  */
