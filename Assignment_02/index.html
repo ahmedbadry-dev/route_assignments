@@ -25,7 +25,8 @@
                     </div>
                 </div>
                 <!-- right side -->
-                <div class="hero-img"><img src="./imgs/hero-section-img.png" alt="main gym img"></div>
+                <div class="hero-img"><img src="./imgs/hero-section-img.png"
+                        alt="People training inside FitCore gym facility"></div>
             </div>
         </div>
     </div>
@@ -71,7 +72,8 @@
                 <!-- More Than Just a Gym -->
                 <div class="more-than-gym">
                     <!-- lift side img -->
-                    <div class="lift-side"><img src="./imgs/why-choose-us.png" alt="why choose us"></div>
+                    <div class="lift-side"><img src="./imgs/why-choose-us.png"
+                            alt="Personal trainer helping a gym member during workout"></div>
                     <!-- right side -->
                     <div class="right-side">
                         <h3>More Than Just a Gym</h3>
@@ -110,7 +112,7 @@
                                 <img src="./imgs/avatar-1.jpg" alt="member avatar-1">
                             </div>
                             <div class="member-info">
-                                <h4>David Martinez</h4>
+                                <h3>David Martinez</h3>
                                 <p>Lost 35 lbs in 5 months</p>
                             </div>
                         </div>
@@ -125,7 +127,7 @@
                                 <img src="./imgs/avatar-2.jpg" alt="member avatar-2">
                             </div>
                             <div class="member-info">
-                                <h4>Mike Chen</h4>
+                                <h3>Mike Chen</h3>
                                 <p>Gained 15 lbs muscle</p>
                             </div>
                         </div>
@@ -140,7 +142,7 @@
                                 <img src="./imgs/avatar-3.jpg" alt="member avatar-3">
                             </div>
                             <div class="member-info">
-                                <h4>James Rodriguez</h4>
+                                <h3>James Rodriguez</h3>
                                 <p>Marathon finisher</p>
                             </div>
                         </div>
@@ -183,7 +185,7 @@
                 </div>
                 <!-- form -->
                 <div class="form-content">
-                    <form>
+                    <form action="#" method="post">
                         <div class="fullName">
                             <div class="input-field">
                                 <label for="fName">First Name</label>
@@ -191,32 +193,35 @@
                             </div>
                             <div class="input-field">
                                 <label for="lName">Last Name</label>
-                                <input type="text" name="lName" id="lName" placeholder="Enter your last name">
+                                <input type="text" name="lName" id="lName" placeholder="Enter your last name"
+                                    autocomplete="family-name">
                             </div>
                         </div>
                         <div class="input-field">
-                            <label for="emali">Email Address</label>
-                            <input type="email" name="email" id="email" placeholder="your.email@example.com">
+                            <label for="email">Email Address</label>
+                            <input type="email" name="email" id="email" placeholder="your.email@example.com"
+                                autocomplete="email">
                         </div>
                         <div class="input-field">
                             <label for="phoneNumber">Phone Number</label>
-                            <input type="tel" name="phoneNumber" id="phoneNumber" placeholder="(555) 123-4567">
+                            <input type="tel" name="phoneNumber" id="phoneNumber" placeholder="(555) 123-4567"
+                                autocomplete="tel">
                         </div>
                         <div class="input-field">
                             <label for="membership-type">Membership Type</label>
                             <select name="membershipType" id="membership-type">
-                                <option value="basic" selected>Basic Membership - $29month</option>
-                                <option value="premium">Premium Membership - $49month</option>
-                                <option value="vip">VIP Membership - $79month</option>
+                                <option value="basic" selected>Basic Membership - $29/month</option>
+                                <option value="premium">Premium Membership - $49/month</option>
+                                <option value="vip">VIP Membership - $79/month</option>
                             </select>
                         </div>
                         <div class="input-field">
                             <label for="fitness-goals">Fitness Goals</label>
-                            <textarea name="fitnessGoals" id="fitness-goals"
+                            <textarea name="fitnessGoals" id="fitness-goals" rows="4"
                                 placeholder="Tell us about your fitness goals and what you hope to achieve"></textarea>
                         </div>
                         <div>
-                            <button type="submit">Join FitCore Today</button>
+                            <button type="submit" name="submit">Join FitCore Today</button>
                         </div>
                         <div>
                             <p>By submitting this form, you agree to our terms of service and privacy policy.</p>
@@ -227,23 +232,23 @@
         </div>
     </div>
     <!-- footer -->
-    <div id="#footer">
+    <div id="footer">
         <div class="container">
             <div class="content">
                 <!-- top footer -->
                 <div class="top-foot">
-                    <div>
+                    <div class="col">
                         <h3>FitCore</h3>
                         <p>Transform your body and mind at our premium fitness facility. Join thousands of members who
                             have achieved their fitness goals with our expert guidance and state-of-the-art equipment.
                         </p>
                         <div>
-                            <a href="http://Facebook.com">Facebook</a>
-                            <a href="http://Instagram.com">Instagram</a>
-                            <a href="http://Twitter.com">Twitter</a>
+                            <a href="http://Facebook.com" target="_blank">Facebook</a>
+                            <a href="http://Instagram.com" target="_blank">Instagram</a>
+                            <a href="http://Twitter.com" target="_blank">Twitter</a>
                         </div>
                     </div>
-                    <div>
+                    <div class="col middle">
                         <h3>Quick Links</h3>
                         <ul>
                             <li><a href="#hero-section">Home</a></li>
@@ -252,19 +257,19 @@
                             <li><a href="#call-to-action-section">Membership Form</a></li>
                         </ul>
                     </div>
-                    <div>
+                    <div class="col">
                         <h3>Contact Info</h3>
                         <ul>
                             <li>
-                                <p>Address</p>
+                                <p class="title">Address</p>
                                 <p>123 Fitness Street, Downtown City, DC 12345</p>
                             </li>
                             <li>
-                                <p>Phone</p>
-                                <a href="tel:+(555) 123-4567">(555) 123-4567</a>
+                                <p class="title">Phone</p>
+                                <a href="tel:+5551234567">(555) 123-4567</a>
                             </li>
                             <li>
-                                <p>Hours</p>
+                                <p class="title">Hours</p>
                                 <p>Open 24/7</p>
                             </li>
                         </ul>
