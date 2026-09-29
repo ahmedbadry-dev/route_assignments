@@ -124,6 +124,7 @@ header nav ul li a:hover::before {
 /* ========================================================================== */
 /* => Hero section                                                            */
 /* ========================================================================== */
+
 #hero-section {
     padding-top: 176px;
 }
@@ -271,4 +272,246 @@ header nav ul li a:hover::before {
     color: var(--gray-dark);
     border: 2px solid var(--color-border);
     font-weight: var(--font-semibold);
+}
+
+/* ========================================================================== */
+/* => How We Compare                                                          */
+/* ========================================================================== */
+
+#compare-section {
+    background-color: var(--color-primary-lightest);
+}
+
+#compare-section .content .title {
+    margin-bottom: 64px;
+    text-align: center;
+}
+
+#compare-section .content .title h2 {
+    font-size: var(--text-4xl);
+    font-weight: var(--font-bold);
+    line-height: var(--leading-tight);
+    margin-bottom: 16px;
+}
+
+#compare-section .content .title h2 span {
+    color: var(--color-primary);
+}
+
+#compare-section .content .title p {
+    font-size: var(--text-xl);
+    line-height: var(--leading-tight);
+}
+
+
+#compare-section .content>div.table-container {
+    background-color: var(--color-bg-primary);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-3xl);
+    padding: 32px;
+}
+
+#compare-section .content div.table-container {
+    overflow-x: auto;
+}
+
+#compare-section .content div table {
+    width: 100%;
+    min-width: 800px;
+    border-collapse: collapse;
+}
+
+#compare-section .content div table tr th,
+#compare-section .content div table tr td {
+    padding: 16px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+#compare-section .content div table tfoot tr td {
+    border-bottom: 0;
+}
+
+#compare-section .content div table tr th:first-of-type {
+    text-align: start;
+}
+
+#compare-section .content div table thead tr th:first-of-type span,
+#compare-section .content div table tfoot tr td:first-of-type,
+#compare-section .content div table tr th>div span:first-of-type {
+    font-size: var(--text-lg);
+    font-weight: var(--font-bold);
+    margin-bottom: 8px;
+}
+
+#compare-section .content div table tbody tr td:nth-of-type(1) i {
+    margin-right: 8px;
+}
+
+#compare-section .content div table tbody tr:nth-of-type(1) td:nth-of-type(1) i {
+    color: var(--color-info);
+}
+
+#compare-section .content div table tbody tr:nth-of-type(2) td:nth-of-type(1) i {
+    color: var(--color-accent-teal);
+}
+
+#compare-section .content div table tbody tr:nth-of-type(3) td:nth-of-type(1) i {
+    color: var(--color-success-light);
+}
+
+#compare-section .content div table tbody tr:nth-of-type(4) td:nth-of-type(1) i {
+    color: var(--color-accent-orange);
+}
+
+#compare-section .content div table tbody tr:nth-of-type(5) td:nth-of-type(1) i {
+    color: var(--color-danger);
+}
+
+#compare-section .content div table tbody tr:nth-of-type(6) td:nth-of-type(1) i {
+    color: var(--color-info);
+}
+
+#compare-section .content div table tbody tr:nth-of-type(7) td:nth-of-type(1) i {
+    color: var(--indigo);
+}
+
+#compare-section .content div table tbody tr:nth-of-type(8) td:nth-of-type(1) i {
+    color: var(--color-social-facebook);
+}
+
+#compare-section .content div table tbody tr:nth-of-type(9) td:nth-of-type(1) i {
+    color: var(--color-warning);
+}
+
+#compare-section .content div table tr th>div span:last-of-type {
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+}
+
+#compare-section .content div table tr th:nth-of-type(2)>div span {
+    color: var(--color-primary);
+}
+
+#compare-section .content div table tr th div {
+    display: flex;
+    flex-direction: column;
+}
+
+
+#compare-section .content div table tr td:not(#compare-section .content div table tr td:first-of-type) {
+    text-align: center;
+}
+
+#compare-section .content div table tr td:not(#compare-section .content div table tr td:first-of-type) div.badge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    background-color: var(--color-primary);
+    color: var(--color-bg-primary);
+
+}
+
+#compare-section .content div table tr td:not(#compare-section .content div table tr td:first-of-type) div.badge i {
+    margin-right: 4px;
+}
+
+
+#compare-section .content div table tr td:not(#compare-section .content div table tr td:first-of-type) div.badge span {
+    font-weight: var(--font-semibold);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+}
+
+#compare-section .content div table tbody tr:last-of-type td:not(#compare-section .content div table tbody tr:last-of-type td:nth-of-type(1), #compare-section .content div table tbody tr:last-of-type td:nth-of-type(2)) {
+    font-size: var(--text-xl);
+    font-weight: var(--font-semibold);
+    line-height: var(--leading-tight);
+}
+
+#compare-section .content div table tbody tr:last-of-type td:nth-of-type(2) {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    line-height: var(--leading-tight);
+    color: var(--color-primary);
+}
+
+#compare-section .content div table tbody tr:nth-of-type(8) td:not(#compare-section .content div table tbody tr:nth-of-type(8) td:nth-of-type(1),
+    #compare-section .content div table tbody tr:nth-of-type(8) td:nth-of-type(2),
+    #compare-section .content div table tbody tr:nth-of-type(8) td:nth-of-type(4)) {
+    color: var(--color-danger);
+}
+
+#compare-section .content div table tbody tr:nth-of-type(6) td:not(#compare-section .content div table tbody tr:nth-of-type(6) td:nth-of-type(1),
+    #compare-section .content div table tbody tr:nth-of-type(6) td:nth-of-type(2)) {
+    color: var(--color-danger);
+}
+
+#compare-section .content div table tr th:nth-of-type(2) {
+    border-top-left-radius: var(--radius-2xl);
+    border-top-right-radius: var(--radius-2xl);
+}
+
+#compare-section .content div table tfoot tr td:nth-of-type(2) {
+    border-bottom-left-radius: var(--radius-2xl);
+    border-bottom-right-radius: var(--radius-2xl);
+}
+
+#compare-section .content div table tr td:nth-of-type(2),
+#compare-section .content div table tr th:nth-of-type(2) {
+    background-color: var(--color-primary-subtle);
+}
+
+#compare-section .content div table tfoot tr td div:first-of-type {
+    margin-bottom: 8px;
+}
+
+#compare-section .content div table tfoot tr td div:last-of-type {
+    font-weight: var(--font-bold);
+    font-size: var(--text-lg);
+}
+
+#compare-section .content div table tfoot tr td div i {
+    color: var(--color-warning-light);
+}
+
+#compare-section .content div table tfoot tr td div i.dark {
+    color: var(--color-border);
+}
+
+#compare-section .content .foot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 48px;
+}
+
+#compare-section .content .foot>div {
+    padding: 16px 32px;
+    background-color: var(--color-bg-primary);
+    border: 1px solid var(--gray-light);
+    border-radius: var(--radius-2xl);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+#compare-section .content .foot>div i {
+    font-size: var(--text-2xl);
+    line-height: var(--leading-tight);
+    color: var(--color-success-light);
+}
+
+#compare-section .content .foot>div div p:first-of-type {
+    font-size: var(--text-lg);
+    font-weight: var(--font-bold);
+    line-height: var(--leading-relaxed);
+    color: var(--color-success);
+}
+
+#compare-section .content .foot>div div p:last-of-type {
+    font-size: var(--text-sm);
+    color: var(--color-success);
 }
