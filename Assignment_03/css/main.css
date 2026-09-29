@@ -1,10 +1,118 @@
 @import url("./variables.css");
 @import url("./base.css");
 
-// ============================================================================
-// => Website Styles
-// ============================================================================
 
-// ============================================================================
-// => Hero Section
-// ============================================================================
+/* ========================================================================== */
+/* => Website Styles                                                          */
+/* ========================================================================== */
+body {
+    height: 4000px;
+    font-family: "Exo", sans-serif;
+}
+
+section {
+    padding-block: 80px;
+}
+
+.container {
+    max-width: 1280px;
+    margin-inline: auto;
+}
+
+section .container {
+    padding-inline: 24px;
+}
+
+
+/* ========================================================================== */
+/* => Header                                                                  */
+/* ========================================================================== */
+header {
+    background-color: var(--color-primary-lightest);
+    border-bottom: 1px solid var(--color-border-subtle);
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+}
+
+header nav .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+header nav .logo div>i {
+    background-color: var(--color-primary);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--radius-lg);
+}
+
+header nav .logo i {
+    color: var(--color-bg-primary);
+    font-size: var(--text-lg);
+    line-height: var(--leading-relaxed);
+}
+
+header nav .logo span {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    line-height: var(--leading-tight);
+}
+
+header nav ul {
+    display: flex;
+    gap: 32px;
+    margin-right: 48px;
+}
+
+@media (max-width: 1024px) {
+    header nav ul {
+        display: none;
+    }
+}
+
+header nav ul li a {
+    font-weight: var(--font-medium);
+    position: relative;
+}
+
+header nav ul li a.active {
+    color: var(--color-primary-dark);
+}
+
+header nav ul li a.active::before {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-primary-dark);
+}
+
+header nav ul li a::before {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-primary-dark);
+    transition: all .3s ease;
+}
+
+header nav ul li a:hover {
+    color: var(--color-primary-dark)
+}
+
+header nav ul li a:hover::before {
+    width: 100%;
+}
