@@ -6,7 +6,6 @@
 /* => Website Styles                                                          */
 /* ========================================================================== */
 body {
-    height: 4000px;
     font-family: "Exo", sans-serif;
 }
 
@@ -30,6 +29,11 @@ section .container {
 header {
     background-color: var(--color-primary-lightest);
     border-bottom: 1px solid var(--color-border-subtle);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
 }
 
 header nav {
@@ -115,4 +119,156 @@ header nav ul li a:hover {
 
 header nav ul li a:hover::before {
     width: 100%;
+}
+
+/* ========================================================================== */
+/* => Hero section                                                            */
+/* ========================================================================== */
+#hero-section {
+    padding-top: 176px;
+}
+
+#hero-section .content {
+    display: flex;
+    gap: 64px;
+}
+
+@media (max-width: 1024px) {
+    #hero-section .content {
+        flex-direction: column;
+    }
+}
+
+#hero-section .content>div {
+    flex: 1;
+}
+
+#hero-section .content .product-info {
+    margin-bottom: 32px;
+}
+
+#hero-section .content .product-img {
+    padding: 20px;
+    border: 2px solid var(--color-border-light);
+    border-radius: var(--radius-3xl);
+    position: relative;
+}
+
+#hero-section .content .product-img img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: var(--radius-2xl);
+}
+
+#hero-section .content .product-img .product-discount {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    padding: 4px 12px;
+    font-size: var(--text-sm);
+    font-weight: var(--font-bold);
+    border-radius: var(--radius-full);
+    background-color: var(--color-primary);
+    color: var(--color-bg-primary);
+}
+
+
+
+#hero-section .content .product-info .product-badges {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+#hero-section .content .product-info .product-badges span {
+    padding: 4px 12px;
+    font-size: var(--text-sm);
+    font-weight: var(--font-bold);
+    border-radius: var(--radius-full);
+    background-color: var(--color-primary-light);
+    color: var(--color-bg-primary);
+}
+
+#hero-section .content .product-info h1 {
+    font-size: var(--text-5xl);
+    font-weight: var(--font-bold);
+    line-height: var(--leading-tight);
+    margin-bottom: 16px;
+}
+
+#hero-section .content .product-info h1 span {
+    color: var(--color-primary);
+}
+
+#hero-section .content .product-info p {
+    font-size: var(--text-xl);
+    line-height: var(--leading-relaxed);
+}
+
+#hero-section .content .product-price {
+    margin-bottom: 32px;
+}
+
+#hero-section .content .product-price>div {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+#hero-section .content .product-price>div span:nth-of-type(1) {
+    font-size: var(--text-4xl);
+    font-weight: var(--font-bold);
+}
+
+#hero-section .content .product-price>div span:nth-of-type(2) {
+    font-size: var(--text-2xl);
+    text-decoration: line-through;
+    line-height: var(--leading-tight);
+}
+
+#hero-section .content .product-price>div span:nth-of-type(3) {
+    font-size: var(--text-sm);
+    font-weight: var(--font-bold);
+    background-color: var(--color-danger-light);
+    color: var(--color-danger);
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+}
+
+#hero-section .content .product-Quantity {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#hero-section .content .product-Quantity button {
+    font-size: var(--text-lg);
+    font-weight: var(--font-bold);
+    line-height: var(--leading-relaxed);
+    padding: 16px 32px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: all .2s ease;
+}
+
+#hero-section .content .product-Quantity button:hover {
+    transform: scale(1.03);
+}
+
+#hero-section .content .product-Quantity button:nth-of-type(1) {
+    background-color: var(--color-primary);
+    color: var(--color-bg-primary);
+}
+
+#hero-section .content .product-Quantity button:nth-of-type(2) {
+    background-color: var(--color-bg-primary);
+    color: var(--gray-dark);
+    border: 2px solid var(--color-border);
+    font-weight: var(--font-semibold);
 }
