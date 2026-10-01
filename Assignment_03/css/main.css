@@ -695,7 +695,7 @@ header nav ul li a:hover::before {
     border-radius: var(--radius-full);
 }
 
-.testimonials-cards article>div .right-side .m-info h4 {
+.testimonials-cards article>div .right-side .m-info h3 {
     font-weight: var(--font-bold);
     font-size: var(--text-lg);
     line-height: var(--leading-relaxed);
@@ -903,4 +903,148 @@ header nav ul li a:hover::before {
 
     background-color: var(--color-primary);
     color: var(--color-bg-primary);
+}
+
+
+/* ========================================================================== */
+/* => Footer                                                                  */
+/* ========================================================================== */
+
+footer {
+    background-color: var(--color-text-primary);
+    color: var(--color-bg-primary);
+    padding-top: 64px;
+    padding-bottom: 32px;
+}
+
+footer .container {
+    padding-inline: 24px;
+}
+
+footer .content .top-foot {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin-bottom: 48px;
+}
+
+footer .content .top-foot>div {
+    width: calc((100% - 96px) / 4);
+}
+
+
+@media (max-width: 1024px) {
+    footer .content .top-foot>div {
+        width: calc((100% - 32px) / 2);
+    }
+}
+
+@media (max-width: 768px) {
+    footer .content .top-foot>div {
+        width: 100%
+    }
+}
+
+
+footer .content .top-foot .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+footer .content .top-foot .logo div>i {
+    background-color: var(--color-primary);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--radius-lg);
+}
+
+footer .content .top-foot .logo i {
+    color: var(--color-bg-primary);
+    font-size: var(--text-lg);
+    line-height: var(--leading-relaxed);
+}
+
+footer .content .top-foot .logo span {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    line-height: var(--leading-tight);
+}
+
+footer .content .top-foot div:first-of-type>p {
+    line-height: var(--leading-relaxed);
+    margin-bottom: 24px;
+}
+
+footer .content .top-foot .social-icons {
+    display: flex;
+    gap: 16px;
+}
+
+footer .content .top-foot .social-icons div {
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-text-secondary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--radius-lg);
+}
+
+footer .content .top-foot>div h3 {
+    font-weight: var(--font-semibold);
+    font-size: var(--text-lg);
+    line-height: var(--leading-tight);
+    margin-bottom: 24px;
+}
+
+footer .content .top-foot>div ul li {
+    margin-bottom: 12px;
+    color: var(--gray-400);
+    transition: color .2s ease;
+    cursor: pointer;
+}
+
+footer .content .top-foot>div ul li:hover {
+    color: var(--color-bg-primary);
+}
+
+footer .content .bottom-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 32px;
+    border-top: 1px solid var(--color-text-secondary);
+}
+
+@media (max-width: 768px) {
+    footer .content .bottom-foot {
+        flex-direction: column;
+        gap: 16px;
+    }
+}
+
+footer .content .bottom-foot>p {
+    font-size: var(--text-sm);
+    line-height: var(--leading-tight);
+}
+
+footer .content .bottom-foot>div:last-of-type {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+footer .content .bottom-foot>div:last-of-type .payment-op {
+    padding: 12px;
+    border-radius: var(--radius-lg);
+    background-color: var(--color-bg-primary);
+}
+
+footer .content .bottom-foot>div:last-of-type .payment-op img {
+    height: 16px;
 }
