@@ -26,3 +26,8 @@ overlay.addEventListener("click", (e) => {
     closeMobileNav();
   }
 });
+
+const mobileNavLinks = document.querySelectorAll("#mobile-nav a");
+mobileNavLinks.forEach((link) => {
+  link.addEventListener("click", closeMobileNav);
+});
