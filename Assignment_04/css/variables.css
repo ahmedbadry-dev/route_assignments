@@ -27,51 +27,56 @@
     /* ------------------------------------------------------------------ */
     --color-brand-orange: #ff7a50;
     --color-brand-yellow: #ffd15b;
-    --color-brand-text:   #111;
+    --color-brand-text: #111;
 
     /* ------------------------------------------------------------------ */
     /* => Neutral Palette                                                   */
     /* ------------------------------------------------------------------ */
-    --color-white:        #fff;
-    --color-black:        #000;
+    --color-white: #fff;
+    --color-black: #000;
 
-    --color-neutral-50:   oklch(98.5% 0 0);    /* near-white    */
-    --color-neutral-100:  oklch(97% 0 0);      /* lightest gray */
-    --color-neutral-200:  oklch(92.2% 0 0);
-    --color-neutral-300:  oklch(87% 0 0);
-    --color-neutral-400:  oklch(70.8% 0 0);    /* mid-gray      */
-    --color-neutral-500:  oklch(55.6% 0 0);
-    --color-neutral-600:  oklch(43.9% 0 0);    /* dark-gray     */
-    --color-neutral-700:  oklch(37.1% 0 0);
-    --color-neutral-800:  oklch(26.9% 0 0);
-    --color-neutral-900:  oklch(20.5% 0 0);    /* near-black    */
-    --color-neutral-950:  oklch(14.5% 0 0);
+    --color-neutral-50: oklch(98.5% 0 0);
+    /* near-white    */
+    --color-neutral-100: oklch(97% 0 0);
+    /* lightest gray */
+    --color-neutral-200: oklch(92.2% 0 0);
+    --color-neutral-300: oklch(87% 0 0);
+    --color-neutral-400: oklch(70.8% 0 0);
+    /* mid-gray      */
+    --color-neutral-500: oklch(55.6% 0 0);
+    --color-neutral-600: oklch(43.9% 0 0);
+    /* dark-gray     */
+    --color-neutral-700: oklch(37.1% 0 0);
+    --color-neutral-800: oklch(26.9% 0 0);
+    --color-neutral-900: oklch(20.5% 0 0);
+    /* near-black    */
+    --color-neutral-950: oklch(14.5% 0 0);
 
     /* ------------------------------------------------------------------ */
     /* => Semantic / Role Colors                                           */
     /* ------------------------------------------------------------------ */
 
     /* -- Backgrounds --------------------------------------------------- */
-    --color-bg-primary:   var(--color-white);
+    --color-bg-primary: var(--color-white);
     --color-bg-secondary: var(--color-neutral-50);
-    --color-bg-dark:      var(--color-neutral-900);
-    --color-bg-darker:    var(--color-black);
+    --color-bg-dark: var(--color-neutral-900);
+    --color-bg-darker: var(--color-black);
 
     /* -- Text ---------------------------------------------------------- */
     --color-text-heading: var(--color-brand-text);
-    --color-text-body:    var(--color-neutral-600);
-    --color-text-muted:   var(--color-neutral-400);
+    --color-text-body: var(--color-neutral-600);
+    --color-text-muted: var(--color-neutral-400);
     --color-text-on-dark: var(--color-neutral-100);
     --color-text-on-dark-muted: var(--color-neutral-400);
 
     /* -- Accent -------------------------------------------------------- */
-    --color-accent:       var(--color-brand-orange);
+    --color-accent: var(--color-brand-orange);
     --color-accent-hover: #ff9070;
-    --color-highlight:    var(--color-brand-yellow);
+    --color-highlight: var(--color-brand-yellow);
 
     /* -- Borders ------------------------------------------------------- */
-    --color-border:       var(--color-neutral-200);
-    --color-border-dark:  var(--color-neutral-700);
+    --color-border: var(--color-neutral-200);
+    --color-border-dark: var(--color-neutral-700);
 
     /* -- Selection ----------------------------------------------------- */
     --color-selection-bg: var(--color-brand-yellow);
@@ -82,188 +87,230 @@
     /* ------------------------------------------------------------------ */
 
     /* Red */
-    --color-red-50:       oklch(97.1% .013 17.38);
-    --color-red-100:      oklch(93.6% .032 17.717);
-    --color-red-500:      oklch(63.7% .237 25.331);
-    --color-red-600:      oklch(57.7% .245 27.325);
+    --color-red-50: oklch(97.1% .013 17.38);
+    --color-red-100: oklch(93.6% .032 17.717);
+    --color-red-500: oklch(63.7% .237 25.331);
+    --color-red-600: oklch(57.7% .245 27.325);
 
     /* Orange */
-    --color-orange-500:   oklch(70.5% .213 47.604);
+    --color-orange-500: oklch(70.5% .213 47.604);
 
     /* Amber / Yellow */
-    --color-amber-300:    oklch(87.9% .169 91.605);
-    --color-yellow-100:   oklch(97.3% .071 103.193);
-    --color-yellow-200:   oklch(94.5% .129 101.54);
-    --color-yellow-300:   oklch(90.5% .182 98.111);
-    --color-yellow-400:   oklch(85.2% .199 91.936);
+    --color-amber-300: oklch(87.9% .169 91.605);
+    --color-yellow-100: oklch(97.3% .071 103.193);
+    --color-yellow-200: oklch(94.5% .129 101.54);
+    --color-yellow-300: oklch(87.9% .169 91.605);
+
+    --color-yellow-400: oklch(85.2% .199 91.936);
 
     /* Green */
-    --color-green-100:    oklch(96.2% .044 156.743);
-    --color-green-300:    oklch(87.1% .15  154.449);
-    --color-green-500:    oklch(72.3% .219 149.579);
+    --color-green-100: oklch(96.2% .044 156.743);
+    --color-green-300: oklch(87.1% .15 154.449);
+    --color-green-500: oklch(72.3% .219 149.579);
 
     /* Blue */
-    --color-blue-50:      oklch(97%   .014 254.604);
-    --color-blue-100:     oklch(93.2% .032 255.585);
-    --color-blue-300:     oklch(80.9% .105 251.813);
-    --color-blue-500:     oklch(62.3% .214 259.815);
-    --color-blue-600:     oklch(54.6% .245 262.881);
+    --color-blue-50: oklch(97% .014 254.604);
+    --color-blue-100: oklch(93.2% .032 255.585);
+    --color-blue-300: oklch(80.9% .105 251.813);
+    --color-blue-500: oklch(62.3% .214 259.815);
+    --color-blue-600: oklch(54.6% .245 262.881);
 
     /* Purple */
-    --color-purple-50:    oklch(97.7% .014 308.299);
-    --color-purple-100:   oklch(94.6% .033 307.174);
-    --color-purple-300:   oklch(82.7% .119 306.383);
-    --color-purple-500:   oklch(62.7% .265 303.9);
-    --color-purple-600:   oklch(55.8% .288 302.321);
+    --color-purple-50: oklch(97.7% .014 308.299);
+    --color-purple-100: oklch(94.6% .033 307.174);
+    --color-purple-300: oklch(82.7% .119 306.383);
+    --color-purple-500: oklch(62.7% .265 303.9);
+    --color-purple-600: oklch(55.8% .288 302.321);
 
     /* Pink */
-    --color-pink-100:     oklch(94.8% .028 342.258);
-    --color-pink-300:     oklch(82.3% .12  346.018);
-    --color-pink-600:     oklch(59.2% .249   .584);
+    --color-pink-100: oklch(94.8% .028 342.258);
+    --color-pink-300: oklch(82.3% .12 346.018);
+    --color-pink-600: oklch(59.2% .249 .584);
 
     /* Gray (with blue tint) */
-    --color-gray-300:     oklch(87.2% .01  258.338);
+    --color-gray-300: oklch(87.2% .01 258.338);
 
     /* ------------------------------------------------------------------ */
     /* => Typography                                                       */
     /* ------------------------------------------------------------------ */
 
     /* -- Font Families ------------------------------------------------- */
-    --font-primary:  "Exo", ui-sans-serif, system-ui, sans-serif,
-                     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-                     "Noto Color Emoji";
-    --font-mono:     ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-                     "Liberation Mono", "Courier New", monospace;
+    --font-primary: "Exo", ui-sans-serif, system-ui, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
 
     /* -- Font Sizes (Tailwind defaults) -------------------------------- */
-    --text-xs:   0.75rem;      /* 12px */
-    --text-sm:   0.875rem;     /* 14px */
-    --text-base: 1rem;         /* 16px */
-    --text-lg:   1.125rem;     /* 18px */
-    --text-xl:   1.25rem;      /* 20px */
-    --text-2xl:  1.5rem;       /* 24px */
-    --text-3xl:  1.875rem;     /* 30px */
-    --text-4xl:  2.25rem;      /* 36px */
-    --text-5xl:  3rem;         /* 48px */
-    --text-6xl:  3.75rem;      /* 60px */
-    --text-7xl:  4.5rem;       /* 72px */
-    --text-8xl:  6rem;         /* 96px */
-    --text-9xl:  8rem;         /* 128px */
+    --text-xs: 0.75rem;
+    /* 12px */
+    --text-sm: 0.875rem;
+    /* 14px */
+    --text-base: 1rem;
+    /* 16px */
+    --text-lg: 1.125rem;
+    /* 18px */
+    --text-xl: 1.25rem;
+    /* 20px */
+    --text-2xl: 1.5rem;
+    /* 24px */
+    --text-3xl: 1.875rem;
+    /* 30px */
+    --text-4xl: 2.25rem;
+    /* 36px */
+    --text-5xl: 3rem;
+    /* 48px */
+    --text-6xl: 3.75rem;
+    /* 60px */
+    --text-7xl: 4.5rem;
+    /* 72px */
+    --text-8xl: 6rem;
+    /* 96px */
+    --text-9xl: 8rem;
+    /* 128px */
 
     /* -- Line Heights (Tailwind defaults, paired with font sizes) ------ */
-    --leading-xs:   1rem;          /* 16px  */
-    --leading-sm:   1.25rem;       /* 20px  */
-    --leading-base: 1.5rem;        /* 24px  */
-    --leading-lg:   1.75rem;       /* 28px  */
-    --leading-xl:   1.75rem;       /* 28px  */
-    --leading-2xl:  2rem;          /* 32px  */
-    --leading-3xl:  2.25rem;       /* 36px  */
-    --leading-4xl:  2.5rem;        /* 40px  */
-    --leading-5xl:  1;
-    --leading-6xl:  1;
-    --leading-7xl:  1;
-    --leading-8xl:  1;
-    --leading-9xl:  1;
+    --leading-xs: 1rem;
+    /* 16px  */
+    --leading-sm: 1.25rem;
+    /* 20px  */
+    --leading-base: 1.5rem;
+    /* 24px  */
+    --leading-lg: 1.75rem;
+    /* 28px  */
+    --leading-xl: 1.75rem;
+    /* 28px  */
+    --leading-2xl: 2rem;
+    /* 32px  */
+    --leading-3xl: 2.25rem;
+    /* 36px  */
+    --leading-4xl: 2.5rem;
+    /* 40px  */
+    --leading-5xl: 1;
+    --leading-6xl: 1;
+    --leading-7xl: 1;
+    --leading-8xl: 1;
+    --leading-9xl: 1;
 
     /* -- Semantic Line Heights (Tailwind defaults) --------------------- */
-    --leading-none:    1;
-    --leading-tight:   1.25;
-    --leading-snug:    1.375;
-    --leading-normal:  1.5;
+    --leading-none: 1;
+    --leading-tight: 1.25;
+    --leading-snug: 1.375;
+    --leading-normal: 1.5;
     --leading-relaxed: 1.625;
-    --leading-loose:   2;
+    --leading-loose: 2;
 
     /* -- Font Weights (Tailwind defaults) ------------------------------ */
-    --fw-thin:       100;
+    --fw-thin: 100;
     --fw-extralight: 200;
-    --fw-light:      300;
-    --fw-regular:    400;
-    --fw-medium:     500;
-    --fw-semibold:   600;
-    --fw-bold:       700;
-    --fw-extrabold:  800;
-    --fw-black:      900;
+    --fw-light: 300;
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+    --fw-extrabold: 800;
+    --fw-black: 900;
 
     /* ------------------------------------------------------------------ */
     /* => Spacing Scale                                                    */
     /* ------------------------------------------------------------------ */
-    --space-unit: 0.25rem;     /* 4px base unit */
+    --space-unit: 0.25rem;
+    /* 4px base unit */
 
-    --space-1:   0.25rem;      /* 4px   */
-    --space-2:   0.5rem;       /* 8px   */
-    --space-3:   0.75rem;      /* 12px  */
-    --space-4:   1rem;         /* 16px  */
-    --space-5:   1.25rem;      /* 20px  */
-    --space-6:   1.5rem;       /* 24px  */
-    --space-8:   2rem;         /* 32px  */
-    --space-10:  2.5rem;       /* 40px  */
-    --space-12:  3rem;         /* 48px  */
-    --space-16:  4rem;         /* 64px  */
-    --space-20:  5rem;         /* 80px  */
-    --space-24:  6rem;         /* 96px  */
+    --space-1: 0.25rem;
+    /* 4px   */
+    --space-2: 0.5rem;
+    /* 8px   */
+    --space-3: 0.75rem;
+    /* 12px  */
+    --space-4: 1rem;
+    /* 16px  */
+    --space-5: 1.25rem;
+    /* 20px  */
+    --space-6: 1.5rem;
+    /* 24px  */
+    --space-8: 2rem;
+    /* 32px  */
+    --space-10: 2.5rem;
+    /* 40px  */
+    --space-12: 3rem;
+    /* 48px  */
+    --space-16: 4rem;
+    /* 64px  */
+    --space-20: 5rem;
+    /* 80px  */
+    --space-24: 6rem;
+    /* 96px  */
 
     /* ------------------------------------------------------------------ */
     /* => Breakpoints                                                      */
     /* ------------------------------------------------------------------ */
-    --breakpoint-sm:  640px;
-    --breakpoint-md:  768px;
-    --breakpoint-lg:  1024px;
-    --breakpoint-xl:  1280px;
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1280px;
     --breakpoint-2xl: 1536px;
 
     /* -- Container Max-Widths (per breakpoint) ------------------------- */
-    --container-sm:  640px;
-    --container-md:  768px;
-    --container-lg:  1024px;
-    --container-xl:  1280px;
+    --container-sm: 640px;
+    --container-md: 768px;
+    --container-lg: 1024px;
+    --container-xl: 1280px;
     --container-2xl: 1536px;
 
     /* ------------------------------------------------------------------ */
     /* => Layout                                                           */
     /* ------------------------------------------------------------------ */
-    --container-max:     80rem;      /* 1280px */
-    --container-padding: 1.5rem;     /* 24px   */
-    --navbar-height:     52px;
+    --container-max: 80rem;
+    /* 1280px */
+    --container-padding: 1.5rem;
+    /* 24px   */
+    --navbar-height: 52px;
 
     /* ------------------------------------------------------------------ */
     /* => Borders & Radii                                                  */
     /* ------------------------------------------------------------------ */
-    --radius-sm:   0.25rem;    /* 4px  */
-    --radius-md:   0.5rem;     /* 8px  */
-    --radius-lg:   0.75rem;    /* 12px */
-    --radius-xl:   1rem;       /* 16px */
-    --radius-2xl:  1.5rem;     /* 24px */
+    --radius-sm: 0.25rem;
+    /* 4px  */
+    --radius-md: 0.5rem;
+    /* 8px  */
+    --radius-lg: 0.75rem;
+    /* 12px */
+    --radius-xl: 1rem;
+    /* 16px */
+    --radius-2xl: 1.5rem;
+    /* 24px */
     --radius-full: 9999px;
 
     /* ------------------------------------------------------------------ */
     /* => Shadows                                                          */
     /* ------------------------------------------------------------------ */
-    --shadow-sm:   0 1px 2px  0 rgb(0 0 0 / 0.05);
-    --shadow-md:   0 4px 6px -1px rgb(0 0 0 / 0.1),
-                   0 2px 4px -2px rgb(0 0 0 / 0.1);
-    --shadow-lg:   0 10px 15px -3px rgb(0 0 0 / 0.1),
-                   0 4px 6px  -4px rgb(0 0 0 / 0.1);
-    --shadow-xl:   0 20px 25px -5px rgb(0 0 0 / 0.1),
-                   0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+        0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+        0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+        0 8px 10px -6px rgb(0 0 0 / 0.1);
 
     /* ------------------------------------------------------------------ */
     /* => Transitions                                                      */
     /* ------------------------------------------------------------------ */
-    --transition-fast:   0.15s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-base:   0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-slow:   0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-spring: 0.5s  cubic-bezier(0.34, 1.56, 0.64, 1);
+    --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 
     /* ------------------------------------------------------------------ */
     /* => Z-Index Scale                                                    */
     /* ------------------------------------------------------------------ */
-    --z-behind:   -1;
-    --z-base:      0;
-    --z-dropdown:  10;
-    --z-sticky:    20;
-    --z-navbar:    30;
-    --z-overlay:   40;
-    --z-modal:     50;
+    --z-behind: -1;
+    --z-base: 0;
+    --z-dropdown: 10;
+    --z-sticky: 20;
+    --z-navbar: 30;
+    --z-overlay: 40;
+    --z-modal: 50;
 }
 
 
