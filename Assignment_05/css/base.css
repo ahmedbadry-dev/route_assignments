@@ -1,0 +1,63 @@
+/* =========================================
+   BASE
+   ========================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    background-color: var(--background);
+    color: var(--foreground);
+
+    font-family: var(--font-sans);
+    letter-spacing: var(--tracking-normal);
+
+    line-height: 1.5;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+    outline-color: var(--ring);
+}
+
+
+/* Typography */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+p {
+    color: var(--foreground);
+}
+
+
+/* Selection */
+
+::selection {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+}
