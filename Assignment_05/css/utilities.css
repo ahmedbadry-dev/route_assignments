@@ -1,0 +1,128 @@
+/* =========================================
+   UTILITIES
+   ========================================= */
+
+
+/* Display */
+
+.flex {
+    display: flex;
+}
+
+.inline-flex {
+    display: inline-flex;
+}
+
+.block {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* Flex */
+
+.items-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+
+/* Text */
+
+.text-center {
+    text-align: center;
+}
+
+.text-muted {
+    color: var(--muted-foreground);
+}
+
+.text-primary {
+    color: var(--primary);
+}
+
+.text-danger {
+    color: var(--destructive);
+}
+
+
+/* Width */
+
+.w-full {
+    width: 100%;
+}
+
+
+/* Spacing */
+
+.mt-2 {
+    margin-top: var(--space-2);
+}
+
+.mt-4 {
+    margin-top: var(--space-4);
+}
+
+.mb-2 {
+    margin-bottom: var(--space-2);
+}
+
+.mb-4 {
+    margin-bottom: var(--space-4);
+}
+
+
+/* Padding */
+
+.p-4 {
+    padding: var(--space-4);
+}
+
+.p-6 {
+    padding: var(--space-6);
+}
+
+
+/* =========================================
+   BORDER RADIUS
+   ========================================= */
+
+.rounded-none {
+    border-radius: 0;
+}
+
+.rounded-sm {
+    border-radius: var(--radius-sm);
+}
+
+.rounded-md {
+    border-radius: var(--radius-md);
+}
+
+.rounded-lg {
+    border-radius: var(--radius-lg);
+}
+
+.rounded-xl {
+    border-radius: var(--radius-xl);
+}
+
+.rounded-full {
+    border-radius: 9999px;
+}
+
+
+.icon {
+    width: 20px;
+    height: 20px;
+}
