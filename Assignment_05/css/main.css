@@ -1,0 +1,2096 @@
+@import "./tokens.css";
+@import "./reset.css";
+@import "./base.css";
+@import "./components.css";
+@import "./utilities.css";
+
+/* ========================================================================== */
+/* => Website Styles                                                          */
+/* ========================================================================== */
+
+
+.main-content {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f8fafc;
+}
+
+aside {
+  width: 250px;
+  min-width: 250px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border-left: 1px solid var(--border);
+  padding: 24px 16px;
+  transition: width 0.3s ease, padding 0.3s ease;
+  z-index: 50;
+  box-sizing: border-box;
+}
+
+/* Closed State for Desktop: 80px compact icon-only view */
+aside.closed {
+  width: 80px;
+  min-width: 80px;
+  padding: 24px 10px;
+}
+
+aside.closed .brand-info,
+aside.closed .nav-text,
+aside.closed .nav-section-title {
+  display: none;
+}
+
+aside.closed .sidebar-brand {
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+aside.closed .nav-link {
+  justify-content: center;
+  padding: 12px 0;
+}
+
+aside.closed .nav-icon {
+  font-size: 1.15rem;
+  margin: 0;
+}
+
+aside.closed .sidebar-footer {
+  justify-content: center;
+}
+
+aside.closed .toggle-icon {
+  transform: rotate(180deg);
+}
+
+/* ========================================================================== */
+/* => Tablet View (769px to 1024px)                                           */
+/* Sidebar is STATICALLY collapsed (80px), toggle button is hidden            */
+/* ========================================================================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  aside {
+    width: 80px !important;
+    min-width: 80px !important;
+    padding: 24px 10px !important;
+  }
+
+  aside .brand-info,
+  aside .nav-text,
+  aside .nav-section-title {
+    display: none !important;
+  }
+
+  aside .sidebar-brand {
+    justify-content: center !important;
+    margin-bottom: 24px;
+  }
+
+  aside .nav-link {
+    justify-content: center !important;
+    padding: 12px 0 !important;
+  }
+
+  aside .nav-icon {
+    font-size: 1.15rem !important;
+    margin: 0 !important;
+  }
+
+  /* User cannot open/close or toggle sidebar on tablet: statically closed */
+  aside .sidebar-footer {
+    display: none !important;
+  }
+}
+
+/* ========================================================================== */
+/* => Mobile View (< 768px)                                                  */
+/* Sidebar is hidden off-screen, opened via top toggle button with overlay   */
+/* ========================================================================== */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(4px);
+  z-index: 998;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .sidebar-overlay {
+    display: block;
+    pointer-events: none;
+  }
+
+  .sidebar-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Mobile Header Topbar */
+  .mobile-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 40;
+  }
+
+  .mobile-topbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .brand-logo-sm {
+    width: 32px;
+    height: 32px;
+    background: #4f46e5;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 0.95rem;
+  }
+
+  .mobile-brand-title {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--foreground);
+  }
+
+  .mobile-toggle-btn {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--border);
+    background-color: #ffffff;
+    color: var(--foreground);
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    transition: all 0.2s ease;
+  }
+
+  .mobile-toggle-btn:hover {
+    background-color: var(--muted);
+  }
+
+  /* Sidebar Drawer on Mobile */
+  aside {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    width: 280px !important;
+    max-width: 85vw !important;
+    height: 100vh !important;
+    background-color: #ffffff !important;
+    border-left: 1px solid var(--border) !important;
+    box-shadow: -8px 0 30px rgba(0, 0, 0, 0.15) !important;
+    z-index: 999 !important;
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex !important;
+    padding: 20px 16px !important;
+  }
+
+  aside.mobile-open {
+    transform: translateX(0);
+  }
+
+  aside .brand-info,
+  aside .nav-text,
+  aside .nav-section-title {
+    display: block !important;
+  }
+
+  aside .sidebar-brand {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    margin-bottom: 24px;
+    width: 100%;
+  }
+
+  aside .nav-link {
+    justify-content: flex-start !important;
+    padding: 10px 14px !important;
+  }
+
+  aside .nav-icon {
+    font-size: 1rem !important;
+    margin-left: 12px !important;
+  }
+
+  .close-sidebar-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: var(--muted-foreground);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .close-sidebar-btn:hover {
+    background-color: var(--muted);
+    color: var(--foreground);
+  }
+
+  aside .sidebar-footer {
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-topbar {
+    display: none;
+  }
+
+  .close-sidebar-btn {
+    display: none;
+  }
+}
+
+main {
+  flex: 1;
+  min-width: 0;
+  position: relative;
+}
+
+.toggle-btn {
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--border);
+  background-color: #ffffff;
+  color: var(--muted-foreground);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.toggle-btn:hover {
+  background-color: var(--muted);
+  color: var(--foreground);
+}
+
+.toggle-icon {
+  font-size: 0.85rem;
+  transition: transform 0.3s ease;
+}
+
+/* ========================================================================== */
+/* => Main Dashboard Grid Layout                                              */
+/* ========================================================================== */
+
+.dashboard-container {
+  max-width: 1400px;
+  margin-inline: auto;
+  padding: 24px;
+}
+
+.dashboard-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+/* Placeholder card styles for layout testing */
+.grid-card {
+  background-color: #ffffff;
+  /* border: 2px dashed #cbd5e1; */
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.06);
+}
+
+.grid-card:hover {
+  background-color: #f8fafc;
+  /* border-color: #94a3b8; */
+}
+
+/* .placeholder-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #475569;
+  background-color: #f1f5f9;
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.placeholder-label i {
+  color: #4f46e5;
+  font-size: 1.1rem;
+} */
+
+/* ========================================================================== */
+/* 1. Desktop Layout (> 1280px)                                               */
+/* ========================================================================== */
+@media (min-width: 1280px) {
+
+  /* Row 1: Header across all 12 columns */
+  .card-header-slot {
+    grid-column: 1 / span 12;
+    min-height: 72px;
+  }
+
+  /* Row 2: 3 Metric Cards side-by-side (4 columns each) */
+  .card-metric-balance {
+    grid-column: 1 / span 4;
+    min-height: 120px;
+  }
+
+  .card-metric-income {
+    grid-column: 5 / span 4;
+    min-height: 120px;
+  }
+
+  .card-metric-expenses {
+    grid-column: 9 / span 4;
+    min-height: 120px;
+  }
+
+  /* Right Column (cols 1 to 4 in RTL): Activities, Bills, Budget */
+  .card-activities {
+    grid-column: 1 / span 4;
+    grid-row: 3;
+    min-height: 180px;
+  }
+
+  .card-bills {
+    grid-column: 1 / span 4;
+    grid-row: 4;
+    min-height: 240px;
+  }
+
+  .card-budget {
+    grid-column: 1 / span 4;
+    grid-row: 5 / span 2;
+    min-height: 380px;
+  }
+
+  /* Center & Left Columns (cols 5 to 12 in RTL):
+     - Transactions across cols 5 to 12
+     - Chart (cols 5-8, row 4)
+     - Accounts (cols 5-8, row 5)
+     - Payments (cols 9-12, row 4 to 6)
+  */
+  .card-transactions {
+    grid-column: 5 / span 8;
+    grid-row: 3 / span 2;
+    min-height: 400px;
+  }
+
+  .card-chart {
+    grid-column: 5 / span 4;
+    grid-row: 5;
+    min-height: 260px;
+  }
+
+  .card-accounts {
+    grid-column: 5 / span 4;
+    grid-row: 6;
+    min-height: 200px;
+  }
+
+  .card-payments {
+    grid-column: 9 / span 4;
+    grid-row: 5 / span 2;
+    min-height: 480px;
+  }
+}
+
+/* ========================================================================== */
+/* 2. Tablet Layout (769px to 1024px)                                         */
+/* 2-column paired layout matching tablet mockup                              */
+/* ========================================================================== */
+@media (min-width: 769px) and (max-width: 1280px) {
+  .dashboard-container {
+    padding: 16px;
+  }
+
+  /* Row 1: Header across all 12 columns */
+  .card-header-slot {
+    grid-column: 1 / span 12;
+    min-height: 70px;
+  }
+
+  /* Row 2: 3 Metric Cards side-by-side (4 columns each) */
+  .card-metric-balance {
+    grid-column: 1 / span 4;
+    min-height: 110px;
+  }
+
+  .card-metric-income {
+    grid-column: 5 / span 4;
+    min-height: 110px;
+  }
+
+  .card-metric-expenses {
+    grid-column: 9 / span 4;
+    min-height: 110px;
+  }
+
+  /* Row 3: Activities (Right, span 6) & Chart (Left, span 6) */
+  .card-activities {
+    grid-column: 1 / span 6;
+    grid-row: 3;
+    min-height: 220px;
+  }
+
+  .card-chart {
+    grid-column: 7 / span 6;
+    grid-row: 3;
+    min-height: 220px;
+  }
+
+  /* Row 4: Transactions full-width across 12 columns */
+  .card-transactions {
+    grid-column: 1 / span 12;
+    grid-row: 4;
+    min-height: 380px;
+  }
+
+  /* Row 5: Bills (Right, span 6) & Accounts (Left, span 6) */
+  .card-bills {
+    grid-column: 1 / span 6;
+    grid-row: 5;
+    min-height: 240px;
+  }
+
+  .card-accounts {
+    grid-column: 7 / span 6;
+    grid-row: 5;
+    min-height: 240px;
+  }
+
+  /* Row 6: Budget (Right, span 6) & Payments (Left, span 6) */
+  .card-budget {
+    grid-column: 1 / span 6;
+    grid-row: 6;
+    min-height: 340px;
+  }
+
+  .card-payments {
+    grid-column: 7 / span 6;
+    grid-row: 6;
+    min-height: 340px;
+  }
+}
+
+/* ========================================================================== */
+/* 3. Mobile Layout (< 768px)                                                 */
+/* Single-column vertical stack (100% width) matching mobile mockup           */
+/* ========================================================================== */
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 12px;
+  }
+
+  .dashboard-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .grid-card {
+    width: 100%;
+    min-height: 120px;
+    padding: 16px;
+  }
+
+  .card-header-slot {
+    min-height: 70px;
+  }
+
+  .card-metric-balance,
+  .card-metric-income,
+  .card-metric-expenses {
+    min-height: 100px;
+  }
+
+  .card-activities {
+    min-height: 180px;
+  }
+
+  .card-transactions {
+    min-height: 360px;
+  }
+
+  .card-bills {
+    min-height: 220px;
+  }
+
+  .card-budget {
+    min-height: 320px;
+  }
+
+  .card-chart {
+    min-height: 220px;
+  }
+
+  .card-accounts {
+    min-height: 200px;
+  }
+
+  .card-payments {
+    min-height: 320px;
+  }
+}
+
+
+/* ========================================================================== */
+/* => Main Dashboard 1.header slot                                              */
+/* ========================================================================== */
+
+
+.card-header-slot .top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.placeholder-label {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.placeholder-label-h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.placeholder-label-icon {
+  /* padding: 8px 12px; */
+  border-radius: 12px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right, #5b45e9, #4b36d0);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.placeholder-label-icon:hover {
+  background: linear-gradient(to right, #4b36d0, #3b29b6);
+}
+
+.notification-icon {
+  position: relative;
+  cursor: pointer;
+  font-size: 1.2rem;
+  /* padding: 10px;
+  border-radius: 8px; */
+  transition: 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #475569;
+  /* background-color: #e7ecf2; */
+}
+
+.notification-icon:hover {
+  transform: translateY(-2px);
+}
+
+.notification-badge {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background-color: #ff4757;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.header-profile-search-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  gap: 10px;
+  padding: 5px 0;
+}
+
+.header-profile {
+  width: 45px;
+  height: 45px;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.header-profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.header-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  flex-grow: 1;
+  height: 45px;
+}
+
+.header-search input {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 45px;
+  width: 0;
+  padding: 8px 12px;
+  border-radius: 16px;
+  border: none;
+  outline: none;
+  background-color: #f1f5f9;
+  color: #475569;
+  transition: width 0.5s ease;
+}
+
+.header-search .search-icon {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 45px;
+  height: 45px;
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f1f5f9;
+  color: #475569;
+}
+
+.header-search .search-icon i {
+  font-size: 0.8rem;
+  color: #475569;
+  padding: 5px;
+  border-radius: 50px;
+  background-color: #126cc7;
+}
+
+.user-profile-status {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: rgba(113, 255, 47, 0.243);
+  padding: 5px 12px;
+  border-radius: 50px;
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .user-profile-status {
+    width: 120px;
+    height: 40px;
+    margin: 10px;
+  }
+}
+
+.user-profile-status-text {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #07630a;
+}
+
+.user-profile-status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #05a30a;
+}
+
+/* Header top bar for mobile */
+.header-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+
+/* ========================================================================== */
+/* => Main Dashboard 2. Metric: Current Balance   3. Metric: Income   4. Metric: Expenses                                         */
+/* ========================================================================== */
+
+
+
+.card-metric-balance article,
+.card-metric-income article,
+.card-metric-expenses article {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  text-align: right;
+  justify-content: center;
+  width: 100%;
+}
+
+.current-balance-amount {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.current-balance-percentage {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: green;
+}
+
+.current-balance-percentage.up {
+  color: green;
+}
+
+.current-balance-percentage.down {
+  color: red;
+}
+
+/* ========================================================================== */
+/* => Main Dashboard 5. Recent Activities                                   */
+/* ========================================================================== */
+
+.card-activities-cards-container {
+  padding-block: 20px;
+}
+
+.card-recent-activitie {
+  display: flex;
+  align-items: start;
+  gap: 20px;
+  padding: 15px;
+  border-radius: 16px;
+  background-color: #e6f6f8;
+  transition: 0.3s ease;
+  margin-bottom: 12px;
+}
+
+.card-recent-activitie:hover {
+  background-color: #c3e6e9;
+  transform: scale(1.02);
+}
+
+.card-activities-header {
+  font-size: 1.2rem;
+}
+
+.recent-activity-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #c3e6e9;
+  transition: 0.3s ease;
+}
+
+.card-recent-activitie:hover .recent-activity-icon {
+  transform: rotate(360deg);
+  background-color: #58b0bc;
+  color: #fff;
+}
+
+.recent-activity-content {
+  flex-grow: 1;
+}
+
+.recent-activity-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.recent-activity-description {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #475569;
+  margin: 5px 0;
+}
+
+.recent-activity-time {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.recent-activity-type {
+  font-size: .9rem;
+  font-weight: 800;
+  color: #038892;
+}
+
+.recent-activity-footer {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #038892;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-top: 10px;
+}
+
+.card-recent-activitie.credit-card {
+  background-color: #fff2e4;
+}
+
+.card-recent-activitie.credit-card .recent-activity-icon {
+  background-color: #ffe9d2;
+}
+
+.card-recent-activitie :hover.credit-card .recent-activity-icon {
+  background-color: #e96f03;
+}
+
+.card-recent-activitie.credit-card .recent-activity-type {
+  color: #e96f03;
+}
+
+.card-recent-activitie.credit-card:hover .recent-activity-icon {
+  background-color: #e96f03;
+  color: #fff;
+}
+
+
+/* ========================================================================== */
+/* => Main Dashboard 6. Recent Transactions                                   */
+/* ========================================================================== */
+
+.card-transactions {
+  --transaction-primary: #038892;
+  --transaction-text: #1e293b;
+  --transaction-muted: #64748b;
+  --transaction-border: #edf1f5;
+  --transaction-surface: #f8fafc;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  overflow: hidden;
+  background-color: #fff;
+  border: 1px solid #edf1f5;
+  border-radius: 18px;
+  padding: 22px;
+}
+
+/* Header */
+
+.card-transactions .transactions-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.card-transactions .transactions-heading {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+/* .card-transactions .transactions-heading-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 13px;
+  background-color: #e6f6f7;
+  color: var(--transaction-primary);
+  font-size: 1.05rem;
+} */
+
+.card-transactions .transactions-title {
+  margin: 0;
+  color: var(--transaction-text);
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.card-transactions .transactions-subtitle {
+  margin: 4px 0 0;
+  color: var(--transaction-muted);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.card-transactions .transactions-view-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  padding: 9px 13px;
+  border: 1px solid #dcebed;
+  border-radius: 10px;
+  color: var(--transaction-primary);
+  background-color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.card-transactions .transactions-view-all:hover {
+  background-color: #eaf7f8;
+  border-color: #b8dfe2;
+  transform: translateY(-1px);
+}
+
+/* Table */
+
+.card-transactions .transactions-table-wrapper {
+  width: 100%;
+  min-width: 0;
+}
+
+.card-transactions .transactions-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: auto;
+  text-align: right;
+}
+
+.card-transactions .transactions-table thead th {
+  padding: 13px 12px;
+  color: #64748b;
+  background-color: #f8fafc;
+  border-bottom: 1px solid #e8edf2;
+  font-size: 0.8rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.card-transactions .transactions-table thead th:first-child {
+  border-radius: 0 10px 0 0;
+}
+
+.card-transactions .transactions-table thead th:last-child {
+  border-radius: 10px 0 0 0;
+}
+
+/* Rows */
+
+.card-transactions .transactions-table tbody td {
+  padding: 15px 12px;
+  border-bottom: 1px solid #f0f3f6;
+  vertical-align: middle;
+  transition: background-color 0.2s ease;
+}
+
+.card-transactions .transactions-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.card-transactions .transactions-table tbody tr:hover td {
+  background-color: #fafcfd;
+}
+
+/* Transaction name and icon */
+
+.card-transactions .transaction-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 155px;
+}
+
+.card-transactions .transaction-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-size: 0.95rem;
+}
+
+.card-transactions .transaction-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.card-transactions .transaction-name {
+  color: #1e293b;
+  font-size: 0.86rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.card-transactions .transaction-description {
+  color: #64748b;
+  font-size: 0.74rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* Icon color variants */
+
+.card-transactions .transaction-avatar-income {
+  color: #047857;
+  background-color: #d1fae5;
+}
+
+.card-transactions .transaction-avatar-food {
+  color: #c2410c;
+  background-color: #ffedd5;
+}
+
+.card-transactions .transaction-avatar-shopping {
+  color: #1d4ed8;
+  background-color: #dbeafe;
+}
+
+.card-transactions .transaction-avatar-installment {
+  color: #7e22ce;
+  background-color: #f3e8ff;
+}
+
+.card-transactions .transaction-avatar-work {
+  color: #047857;
+  background-color: #d1fae5;
+}
+
+.card-transactions .transaction-avatar-fuel {
+  color: #b91c1c;
+  background-color: #fee2e2;
+}
+
+.card-transactions .transaction-avatar-entertainment {
+  color: #4338ca;
+  background-color: #e0e7ff;
+}
+
+.card-transactions .transaction-avatar-health {
+  color: #0e7490;
+  background-color: #cffafe;
+}
+
+.card-transactions .transaction-avatar-education {
+  color: #047857;
+  background-color: #d1fae5;
+}
+
+/* Category badges */
+
+.card-transactions .transaction-category {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 0.73rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.card-transactions .transaction-category i {
+  font-size: 0.7rem;
+}
+
+.card-transactions .category-income,
+.card-transactions .category-work,
+.card-transactions .category-education {
+  color: #047857;
+  background-color: #d1fae5;
+}
+
+.card-transactions .category-food {
+  color: #c2410c;
+  background-color: #ffedd5;
+}
+
+.card-transactions .category-shopping {
+  color: #1d4ed8;
+  background-color: #dbeafe;
+}
+
+.card-transactions .category-installment {
+  color: #7e22ce;
+  background-color: #f3e8ff;
+}
+
+.card-transactions .category-transport {
+  color: #b91c1c;
+  background-color: #fee2e2;
+}
+
+.card-transactions .category-entertainment {
+  color: #4338ca;
+  background-color: #e0e7ff;
+}
+
+.card-transactions .category-health {
+  color: #0e7490;
+  background-color: #cffafe;
+}
+
+/* Date */
+
+.card-transactions .transaction-date {
+  display: block;
+  color: #475569;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Status */
+
+.card-transactions .transaction-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 0.73rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.card-transactions .status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+.card-transactions .status-completed {
+  color: #047857;
+  background-color: #d1fae5;
+}
+
+.card-transactions .status-pending {
+  color: #a16207;
+  background-color: #fef9c3;
+}
+
+/* Amount */
+
+.card-transactions .transaction-amount {
+  display: block;
+  font-size: 0.86rem;
+  font-weight: 800;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.card-transactions .amount-income {
+  color: #059669;
+}
+
+.card-transactions .amount-expense {
+  color: #1e293b;
+}
+
+/* Footer */
+
+.card-transactions .transactions-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 14px;
+  padding-top: 15px;
+  border-top: 1px solid #edf1f5;
+  color: #64748b;
+  font-size: 0.77rem;
+  font-weight: 600;
+}
+
+.card-transactions .transactions-footer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--transaction-primary);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.card-transactions .transactions-footer-link:hover {
+  color: #02666d;
+}
+
+/* ========================================================================== */
+/* Tablet: Keep the table, reduce spacing                                     */
+/* ========================================================================== */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .card-transactions {
+    padding: 18px;
+  }
+
+  .card-transactions .transactions-table thead th,
+  .card-transactions .transactions-table tbody td {
+    padding-inline: 8px;
+  }
+
+  .card-transactions .transaction-info {
+    gap: 8px;
+    min-width: 0;
+  }
+
+  .card-transactions .transaction-avatar {
+    width: 36px;
+    height: 36px;
+  }
+
+  .card-transactions .transaction-name {
+    font-size: 0.78rem;
+  }
+
+  .card-transactions .transaction-description,
+  .card-transactions .transaction-date {
+    font-size: 0.7rem;
+  }
+
+  .card-transactions .transaction-category,
+  .card-transactions .transaction-status {
+    padding: 5px 7px;
+    font-size: 0.68rem;
+  }
+
+  .card-transactions .transaction-amount {
+    font-size: 0.76rem;
+  }
+}
+
+/* ========================================================================== */
+/* Mobile: Each transaction becomes an independent card                       */
+/* ========================================================================== */
+
+@media (max-width: 768px) {
+  .card-transactions {
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .card-transactions .transactions-header {
+    align-items: flex-start;
+    margin-bottom: 18px;
+  }
+
+  .card-transactions .transactions-heading {
+    gap: 6px;
+  }
+
+  /* .card-transactions .transactions-heading-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 11px;
+    font-size: 0.9rem;
+  } */
+
+  .card-transactions .transactions-title {
+    font-size: 0.95rem;
+  }
+
+  .card-transactions .transactions-subtitle {
+    font-size: 0.72rem;
+  }
+
+  .card-transactions .transactions-view-all {
+    padding: 8px 10px;
+    gap: 5px;
+    font-size: 0.72rem;
+  }
+
+  .card-transactions .transactions-table,
+  .card-transactions .transactions-table tbody {
+    display: block;
+    width: 100%;
+  }
+
+  .card-transactions .transactions-table thead {
+    display: none;
+  }
+
+  .card-transactions .transactions-table tbody tr {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 12px 10px;
+    padding: 14px;
+    margin-bottom: 12px;
+    border: 1px solid #edf1f5;
+    border-radius: 14px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.025);
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .card-transactions .transactions-table tbody tr:last-child {
+    margin-bottom: 0;
+  }
+
+  .card-transactions .transactions-table tbody tr:hover {
+    border-color: #d5e9eb;
+    box-shadow: 0 5px 14px rgba(15, 23, 42, 0.05);
+    transform: translateY(-1px);
+  }
+
+  .card-transactions .transactions-table tbody td {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+
+  /* Top row: transaction identity and amount */
+
+  .card-transactions .transactions-table tbody td[data-label="المعاملة"] {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .card-transactions .transactions-table tbody td[data-label="المبلغ"] {
+    grid-column: 2;
+    grid-row: 1;
+    justify-content: flex-start;
+    align-self: center;
+  }
+
+  .card-transactions .transaction-info {
+    gap: 10px;
+    min-width: 0;
+  }
+
+  .card-transactions .transaction-avatar {
+    width: 40px;
+    height: 40px;
+  }
+
+  .card-transactions .transaction-name {
+    font-size: 0.8rem;
+    overflow-wrap: anywhere;
+  }
+
+  .card-transactions .transaction-description {
+    font-size: 0.7rem;
+  }
+
+  .card-transactions .transaction-amount {
+    font-size: 0.8rem;
+    text-align: left;
+  }
+
+  /* Bottom row: category, date and status */
+
+  .card-transactions .transactions-table tbody td[data-label="الفئة"] {
+    grid-column: 1;
+    grid-row: 2;
+    justify-content: flex-start;
+  }
+
+  .card-transactions .transactions-table tbody td[data-label="التاريخ"] {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    padding-top: 10px;
+    border-top: 1px solid #f0f3f6;
+  }
+
+  .card-transactions .transactions-table tbody td[data-label="الحالة"] {
+    grid-column: 2;
+    grid-row: 2;
+    justify-content: flex-start;
+  }
+
+  /* Small field labels on mobile */
+
+  .card-transactions .transactions-table tbody td[data-label="الفئة"]::before,
+  .card-transactions .transactions-table tbody td[data-label="التاريخ"]::before,
+  .card-transactions .transactions-table tbody td[data-label="الحالة"]::before {
+    content: attr(data-label);
+    margin-left: 7px;
+    color: #94a3b8;
+    font-size: 0.68rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .card-transactions .transaction-category,
+  .card-transactions .transaction-status {
+    padding: 5px 8px;
+    font-size: 0.68rem;
+  }
+
+  .card-transactions .transaction-date {
+    font-size: 0.72rem;
+  }
+
+  .card-transactions .transactions-footer {
+    margin-top: 16px;
+    padding-top: 14px;
+    font-size: 0.7rem;
+  }
+}
+
+/* ========================================================================== */
+/* Very narrow phones                                                         */
+/* ========================================================================== */
+
+@media (max-width: 380px) {
+  .card-transactions {
+    padding: 12px;
+  }
+
+  .card-transactions .transactions-header {
+    gap: 8px;
+  }
+
+  .card-transactions .transactions-view-all {
+    padding: 7px;
+  }
+
+  .card-transactions .transactions-table tbody tr {
+    padding: 11px;
+    gap: 10px 6px;
+  }
+
+  .card-transactions .transaction-avatar {
+    width: 34px;
+    height: 34px;
+    font-size: 0.8rem;
+  }
+
+  .card-transactions .transaction-name {
+    font-size: 0.74rem;
+  }
+
+  .card-transactions .transaction-amount {
+    font-size: 0.73rem;
+  }
+}
+
+/* ========================================================================== */
+/* => Main Dashboard 7. Monthly Bills                                         */
+/* ========================================================================== */
+
+.card-bills-header,
+.card-budget-header,
+.card-accounts-header,
+.card-payments-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+.card-bills-total {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #cceaeed4;
+  margin-bottom: 20px;
+}
+
+
+.card-bills-total .card-bills-total-amount {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #004144;
+}
+
+.bills-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.card-bill {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #fff;
+  border: 1px solid #f1f5f9;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.card-bill:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-bill-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #038892;
+  font-size: 1.2rem;
+  transition: 0.3s ease;
+}
+
+.card-bill:hover .card-bill-icon {
+  transform: rotate(360deg);
+  background-color: #58b0bc;
+  color: #fff;
+}
+
+.card-bill-amount {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #475569;
+}
+
+.card-bill-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-bill-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #475569;
+}
+
+.card-bill-subtitle {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.card-bill-subtitle.min-5-days {
+  color: #e13232;
+}
+
+.card-bill-subtitle.between-5-10-days {
+  color: #e99f32;
+}
+
+.card-bill-subtitle.more-than-15-days {
+  color: #05a30a;
+}
+
+/* ========================================================================== */
+/* => Main Dashboard 8. Budget Overview                                        */
+/* ========================================================================== */
+
+.budget-card-total {
+  padding: 20px;
+  margin-bottom: 15px;
+  background-color: #EBF4F7;
+  border-radius: 10px;
+  border: 1px solid #c0e7f3;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.budget-card-total:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.budget-card-total .top-side {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.budget-card-total .top-side .total-amount-number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #004144;
+}
+
+.budget-card-total .top-side .remaining-budget-number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #004144;
+}
+
+.budget-card-total .bottom-side .budget-limit {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.budget-progress {
+  margin-top: 10px;
+}
+
+.budget-progress-outer {
+  position: relative;
+  width: 100%;
+  height: 10px;
+  border-radius: 10px;
+  background-color: #e0e0e0;
+}
+
+.budget-progress-inner {
+  height: 100%;
+  width: 82%;
+  border-radius: 10px;
+  background-color: #004144;
+}
+
+.budget-cards-container .budget-card {
+  padding: 15px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  border: 1px solid #f1f5f9;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.budget-cards-container .budget-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.budget-cards-container .budget-card .budget-card-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.budget-cards-container .budget-card .budget-card-top .budget-card-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.budget-cards-container .budget-card.entrainment-card .budget-card-top .budget-card-icon {
+  color: #d75a07;
+  background-color: #ffd8bc;
+}
+
+.budget-cards-container .budget-card.invoice-card .budget-card-top .budget-card-icon {
+  color: #5834f3;
+  background-color: #e4d7ff;
+}
+
+.budget-cards-container .budget-card.shopping-card .budget-card-top .budget-card-icon {
+  color: #05a30a;
+  background-color: #b7fbc0;
+}
+
+.budget-cards-container .budget-card.bills-card .budget-card-top .budget-card-icon {
+  color: #038892;
+  background-color: #b7f7fd;
+}
+
+.budget-cards-container .budget-card.personal-care-card .budget-card-top .budget-card-icon {
+  color: #f14c3c;
+  background-color: #fec6bf;
+}
+
+
+.budget-cards-container .budget-card .budget-card-top .budget-card-info {
+  flex: 1;
+}
+
+.budget-cards-container .budget-card .budget-card-top .budget-card-info .budget-card-title {
+  font-weight: 700;
+  color: #475569;
+}
+
+.budget-cards-container .budget-card .budget-card-top .budget-card-info .budget-card-subtitle {
+  font-size: 0.8rem;
+  color: #475569;
+}
+
+.budget-cards-container .budget-card .budget-card-amount {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.budget-cards-container .budget-card .budget-card-amount .budget-card-amount-text {
+  font-weight: 700;
+  color: #475569;
+}
+
+.budget-cards-container .budget-card .budget-card-amount .budget-card-amount-subtitle {
+  font-size: 0.8rem;
+  color: #475569;
+}
+
+.budget-cards-container .budget-card .budget-card-progress {
+  margin-top: 15px;
+}
+
+.budget-cards-container .budget-card .budget-card-progress .budget-card-progress-outer {
+  width: 100%;
+  height: 10px;
+  border-radius: 10px;
+  background-color: #e0e0e0;
+  overflow: hidden;
+}
+
+.budget-cards-container .budget-card .budget-card-progress .budget-card-progress-inner {
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.budget-cards-container .budget-card.entrainment-card .budget-card-progress .budget-card-progress-inner {
+  width: 50%;
+  background-color: #ff6d0c;
+}
+
+.budget-cards-container .budget-card.invoice-card .budget-card-progress .budget-card-progress-inner {
+  width: 100%;
+  background-color: #6039f3;
+}
+
+.budget-cards-container .budget-card.shopping-card .budget-card-progress .budget-card-progress-inner {
+  width: 80%;
+  background-color: #10f728;
+}
+
+.budget-cards-container .budget-card.bills-card .budget-card-progress .budget-card-progress-inner {
+  width: 20%;
+  background-color: #004144;
+}
+
+.budget-cards-container .budget-card.personal-care-card .budget-card-progress .budget-card-progress-inner {
+  width: 86%;
+  background-color: #ff4b38;
+}
+
+/* ========================================================================== */
+/* => Main Dashboard 9. Income vs Expenses Chart                                       */
+/* ========================================================================== */
+
+.chart-container {}
+
+.chart-container .chart-info {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  margin-bottom: 30px;
+  font-weight: 700;
+  color: #475569;
+}
+
+.chart-container .chart-info p:first-of-type {
+  position: relative;
+}
+
+.chart-container .chart-info p:first-of-type::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -25px;
+  margin-top: -7.5px;
+  width: 15px;
+  height: 15px;
+  background-color: #10f728;
+  border-radius: 4px;
+}
+
+.chart-container .chart-info p:last-of-type {
+  position: relative;
+}
+
+.chart-container .chart-info p:last-of-type::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -25px;
+  margin-top: -7.5px;
+  width: 15px;
+  height: 15px;
+  background-color: #f71010;
+  border-radius: 4px;
+}
+
+.chart-container .bars {
+  display: flex;
+  align-items: end;
+  justify-content: space-evenly;
+  min-height: 220px;
+}
+
+
+.bars .bar {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.bars .bar .bar-cols {
+  height: 180px;
+  display: flex;
+  align-items: end;
+  gap: 5px;
+}
+
+.bars .bar .bar-col {
+  width: 20px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.bars .bar .bar-fill-primary {
+  background-color: #07630a;
+  height: 95%;
+}
+
+.bars .bar .bar-fill-seacndary {
+  background-color: #a91d1d;
+  height: 45%;
+}
+
+.bar .bar-label {
+  font-size: 0.7rem;
+  color: #475569;
+  margin-top: 10px;
+}
+
+/* ========================================================================== */
+/* => Main Dashboard 10. Account Summary                                         */
+/* ========================================================================== */
+
+.account-cards-container .account-card {
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid #eee;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: border-color 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+}
+
+.account-cards-container .account-card:hover {
+  border-color: #004144;
+  transform: translateY(-5px);
+  background-color: #e2e8f0;
+}
+
+.account-cards-container .account-card .account-card-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.account-cards-container .account-wallet .account-card-icon {
+  color: #091311;
+  background-color: #42d9ff;
+}
+
+.account-cards-container .account-bank .account-card-icon {
+  color: #353300;
+  background-color: #dfdd2b;
+}
+
+.account-cards-container .account-credit .account-card-icon {
+  color: #505050;
+  background-color: #c4c4c4;
+}
+
+.account-cards-container .account-card .account-card-info {
+  flex: 1;
+}
+
+.account-cards-container .account-card .account-card-info .account-card-title {
+  font-weight: 700;
+  color: #475569;
+}
+
+.account-cards-container .account-card .account-card-info .account-card-subtitle {
+  font-size: 0.8rem;
+  color: #475569;
+}
+
+.account-cards-container .account-card .account-card-amount {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.account-cards-container .account-card .account-card-amount .account-card-amount-text {
+  font-weight: 700;
+  color: #475569;
+}
+
+.account-cards-container .account-card .account-card-amount .account-card-amount-subtitle {
+  font-size: 0.8rem;
+  color: #475569;
+}
+
+
+/* ========================================================================== */
+/* => Main Dashboard 11. Payment Methods                                         */
+/* ========================================================================== */
+
+
+
+
+#payment-animation,
+#online-payments-animation {
+  width: 100%;
+}
+
+#payment-animation svg,
+#online-payments-animation svg {
+  width: 100%;
+  height: 100%;
+}
+
+
+/* ========================================================================== */
+/* => Reusable Section Header Icon                                           */
+/* Add .section-icon to icons beside section titles                           */
+/* ========================================================================== */
+
+.section-icon {
+  width: 38px !important;
+  height: 38px !important;
+  min-width: 38px;
+
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+
+  background: #e6f6f8 !important;
+  color: #038892 !important;
+
+  border: 1px solid #c3e6e9;
+  border-radius: 12px !important;
+
+  font-size: 1rem !important;
+  line-height: 1;
+
+  flex-shrink: 0;
+  box-sizing: border-box;
+  margin-left: 6px;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* Optional hover effect */
+.section-icon:hover {
+  background: #c3e6e9 !important;
+  color: #004144 !important;
+}
+
+/* Keep the icon consistent on mobile */
+@media (max-width: 768px) {
+  .section-icon {
+    width: 34px !important;
+    height: 34px !important;
+    min-width: 34px;
+
+    font-size: 0.9rem !important;
+    border-radius: 10px !important;
+  }
+}
